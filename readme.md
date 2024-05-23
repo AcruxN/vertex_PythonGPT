@@ -24,9 +24,9 @@ PythonGPT is an interactive website designed to teach beginners how to code in P
    git clone https://github.com/AcruxN/vertex_PythonGPT
    ```
 
-2. **Install Backend Prerequisites& Dependencies**
+2. **Install Prerequisites & Backend Dependencies**
 
-    - Install Python and Google Cloud SDK
+    - Install [Python](https://www.python.org/downloads/) and [Google Cloud SDK](https://cloud.google.com/sdk/docs/install)
     - Install Dependencies
 
     ```sh
@@ -37,7 +37,8 @@ PythonGPT is an interactive website designed to teach beginners how to code in P
 
     ```sh
     python --version
-    gcloud --version (https://cloud.google.com/sdk/docs/install)
+    gcloud --version
+    pip list
     ```
 
 3. **Obtain Google Cloud Service Account's Credential File**
@@ -63,6 +64,6 @@ PythonGPT is an interactive website designed to teach beginners how to code in P
 
 ### Usage
 
-- Navigate to "http"//localhost:5000" or "<http://127.0.0.1:5000>" with web browser to access the service
+- Navigate to "<http://localhost:5000>" or "<http://127.0.0.1:5000>" with web browser to access the service
 - Follow interactive lessons to learn Python programming
 - Use the AI chatbot for assistance whenever needed
