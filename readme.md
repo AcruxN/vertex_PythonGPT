@@ -1,6 +1,6 @@
 # PythonGPT
 
-PythonGPT is an interactive website designed to teach beginners how to code in Python
+PythonGPT is an interactive web service designed to teach beginners how to code in Python with personal AI assistance powered by Vertex AI
 
 ## Features
 
