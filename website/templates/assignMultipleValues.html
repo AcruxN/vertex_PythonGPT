@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}Assign Multiple Values{% endblock %}
+
+{% block content %}
+
+<div class="header space-y-3 py-4 px-5">
+    <p class="text-4xl font-bold">Python Variables - Assign Multiple Values
+    </p>
+    <div style="margin-bottom: 0%;">
+        <a href="{{ url_for('views.variableNames') }}" class="button-link ">
+            <button class="btn btn-primary">Previous</button>
+        </a>
+        <a href="{{ url_for('views.outputVariables') }}" class="button-link btn-primary float-right">
+            <button class="btn btn-primary">Next</button>
+        </a>
+    </div>
+</div>
+<div class="px-12 pb-4">
+    <hr class="my-4">
+    <div class="content-1 space-y-3">
+        <div class="content title">
+            <div class="text-3xl">Many Values to Multiple Variables
+            </div><br>
+            <p>Python allows you to assign values to multiple variables in one line:
+
+            </p>
+        </div>
+    </div>
+    <div class="content-1 space-y-3">
+        <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div>x, y, z = <span class="text-red-600">"Orange", "Banana", "Cherry"</span></div>
+                <div><span class="text-blue-600">print</span>(x)</div>
+                <div><span class="text-blue-600">print</span>(y)</div>
+                <div><span class="text-blue-600">print</span>(z)</div>
+
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+        <div style="background-color: #FFFACD; padding: 26px; border-radius: 5px;">
+            <b>Note:</b> Make sure the number of variables matches the number of values, or else you will get an error.
+
+
+        </div>
+    </div>
+
+    <hr class="my-4">
+    <div class="content-1 space-y-3">
+        <div class="content title">
+            <div class="text-3xl">One Value to Multiple Variables
+            </div><br>
+            <p>And you can assign the same value to multiple variables in one line:
+
+            </p>
+        </div>
+        <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div>x = y = z = <span class="text-red-600">"Orange"</span></div>
+                <div><span class="text-blue-600">print</span>(x)</div>
+                <div><span class="text-blue-600">print</span>(y)</div>
+                <div><span class="text-blue-600">print</span>(z)</div>
+
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+        <div class="content-1 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Unpack a Collection
+
+                </div><br>
+                <p>If you have a collection of values in a list, tuple etc. Python allows you to extract the values into
+                    variables. This is called unpacking.</p>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm mb-2">Unpack a list: </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>fruits = [ <span class="text-red-600">"apple", "banana", "cherry"</span> ]</div>
+                    <div>x, y, z = fruits
+                    </div>
+                    <div><span class="text-blue-600">print</span>(x)</div>
+                    <div><span class="text-blue-600">print</span>(y)</div>
+                    <div><span class="text-blue-600">print</span>(z)</div>
+
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <div style="margin-bottom: 0%;">
+                <a href="{{ url_for('views.variableNames') }}" class="button-link ">
+                    <button class="btn btn-primary">Previous</button>
+                </a>
+                <a href="{{ url_for('views.outputVariables') }}" class="button-link btn-primary float-right">
+                    <button class="btn btn-primary">Next</button>
+                </a>
+            </div>
+        </div>
+
+
+
+    </div>
+    {% endblock %}

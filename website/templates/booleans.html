@@ -1,0 +1,343 @@
+{% extends "base.html" %}
+
+{% block title %}Booleans{% endblock %}
+
+{% block content %}
+<!-- Writee our mian content here -->
+<div>
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python Booleans</p>
+        <!--<button type="button" class="btn btn-primary" onclick="redirectToPrevious()">Previous</button>
+        <button type="button" class="btn btn-primary float-right" onclick="redirectToNext()">Next</button>-->
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.stringMethods') }}" class="button-link btn-primary">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.operators') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-4">
+        <div class="">
+            <p>Booleans represent one of two values: <code class="p-data">True</code> or <code
+                    class="p-data">False</code>.</p>
+        </div>
+        <hr class="my-4">
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Boolean Values</div><br>
+                <div class="space-y-2">
+                    <p>In programming, you often need to determine if an expression is <code class="p-data">True</code>
+                        or <code class="p-data">False</code>.</p>
+                    <p>In Python, you can evaluate any expression and receive one of two outcomes: <code
+                            class="p-data">True</code> or <code class="p-data">False</code>.</p>
+                    <p>When comparing two values, Python evaluates the expression and returns the Boolean result:</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div class="text-green-600"># This is a comment.</div>
+                    <div><span class="text-blue-600">print</span>&#40;<span class="text-red-600">10</span> > <span
+                            class="text-red-600">9</span>&#41;</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <p class="pl-3">When you use a condition in an if statement, Python returns <code class="p-data">True</code>
+                or <code class="p-data">False</code>:</p>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm mb-2">Print a message based on whether the condition is <code
+                        class="p-data">True</code> or <code class="p-data">False</code>:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>a = <span class="text-red-600">300</span></div>
+                    <div>b = <span class="text-red-600">44</span></div>
+                    <div><span class="text-blue-600">if </span>b > a:</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">print</span>&#40;<span
+                            style="color: brown;">"b is greater than a"</span>&#41;</div>
+                    <div><span class="text-blue-600">else</span></div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">print</span>&#40;<span
+                            style="color: brown;">"b is not greater than a"</span>&#41;</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <hr class="my-4">
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Evaluate Values and Variables</div><br>
+                <div class="space-y-2">
+                    <p>The <code class="p-data">bool()</code> function can assess any value and return either <code
+                            class="p-data">True</code> or <code class="p-data">False</code>.</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm mb-2">Evaluate a string and a number:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div><span class="text-blue-600">print</span>&#40;<span class="text-blue-600">bool</span>&#40;<span
+                            style="color: brown;">"Hello"</span>&#41;&#41;</div>
+                    <div><span class="text-blue-600">print</span>&#40;<span class="text-blue-600">bool</span>&#40;<span
+                            class="text-red-600">15</span>&#41;&#41;</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <br>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm mb-2">Evaluate two variables:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>x = <span style="color:brown;">"Hello"</span></div>
+                    <div>y = <span class="text-red-600">15</span></div>
+                    <br>
+                    <div><span class="text-blue-600">print</span>&#40;<span
+                            class="text-blue-600">bool</span>&#40;x&#41;&#41;</div>
+                    <div><span class="text-blue-600">print</span>&#40;<span
+                            class="text-blue-600">bool</span>&#40;y&#41;&#41;</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Most Values are True</div><br>
+                <div class="space-y-2">
+                    <p>Nearly any value is evaluated as <code class="p-data">True</code> if it contains some content.
+                    </p>
+                    <p>All strings are <code class="p-data">True</code>, except for empty ones.</p>
+                    <p>All numbers are <code class="p-data">True</code>, except for <code class="p-data">0</code>.</p>
+                    <p>All lists, tuples, sets, and dictionaries are <code class="p-data">True</code>, except for empty
+                        ones.</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm mb-2">The following will return True:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div><span class="text-blue-600">bool</span>&#40;<span style="color: brown;">"abc"</span>&#41;</div>
+                    <div><span class="text-blue-600">bool</span>&#40;<span class="text-red-600">123</span>&#41;</div>
+                    <div><span class="text-blue-600">bool</span>&#40;[<span style="color: brown;">"apple"</span>, <span
+                            style="color: brown;">"cherry"</span>, <span style="color: brown;">"banana"</span>]&#41;
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Some Values are False</div><br>
+                <div class="space-y-2">
+                    <p>In fact, there are not many values that evaluate to <code class="p-data">False</code>, except
+                        empty values, such as <code class="p-data">()</code>, <code class="p-data">[]</code>, <code
+                            class="p-data">{}</code>, <code class="p-data">""</code>, the number <code
+                            class="p-data">0</code>, and the value <code class="p-data">None</code>. And of course the
+                        value <code class="p-data">False</code> evaluates to <code class="p-data">False</code>.</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm mb-2">The following will return False: </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>
+                        <span class="text-blue-600">bool</span>&#40;<span class="text-blue-600">False</span>&#41;
+                    </div>
+                    <div>
+                        <span class="text-blue-600">bool</span>&#40; None &#41;
+                    </div>
+                    <div>
+                        <span class="text-blue-600">bool</span>&#40;<span class="text-red-600">0</span>&#41;
+                    </div>
+                    <div>
+                        <span class="text-blue-600">bool</span>&#40;<span style="color:brown;">""</span>&#41;
+                    </div>
+                    <div>
+                        <span class="text-blue-600">bool</span>&#40;&#40;&#41;&#41;
+                    </div>
+                    <div>
+                        <span class="text-blue-600">bool</span>&#40;[]&#41;
+                    </div>
+                    <div>
+                        <span class="text-blue-600">bool</span>&#40;{}&#41;
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+
+            <div class="content title">
+                <div class="space-y-2">
+                    <p>One more value, or object in this case, evaluates to <code class="p-data">False</code>, and that
+                        is if you have an object that is made from a class with a <code class="p-data">__len__</code>
+                        function that returns <code class="p-data">0</code> or <code class="p-data">False</code>:</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>
+                        <span class="text-blue-600">class</span> myclass():
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">def </span>__len__&#40;self&#41;:
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">return </span><span class="text-red-600">0</span>
+                    </div>
+                    <br>
+                    <div>
+                        myobj = myclass()
+                    </div>
+                    <div>
+                        <span class="text-blue-600">print</span>&#40;<span
+                            class="text-blue-600">bool</span>&#40;myobj&#41;&#41;
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Functions can Return a Boolean</div><br>
+                <div class="space-y-2">
+                    <p>You can create functions that returns a Boolean Value:</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm mb-2">Print the answer of a function:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>
+                        <span class="text-blue-600">def</span> myFunction&#40;&#41;:
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">return True</span>
+                    </div>
+                    <br>
+                    <div>
+                        <span class="text-blue-600">print</span>&#40;myFunction&#40;&#41;&#41;
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <div class="content title">
+                <div class="space-y-2">
+                    <p>You can execute code based on the Boolean answer of a function:</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm mb-2">Print "YES!" if the function returns True, otherwise print "NO!":</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>
+                        <span class="text-blue-600">def</span> myFunction():
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">return True</span>
+                    </div>
+                    <br>
+                    <div>
+                        <span class="text-blue-600">if </span>myFunction():</span>
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">print</span>&#40;<span style="color:brown;">"YES!"</span>&#41;
+                    </div>
+                    <div>
+                        <span class="text-blue-600">else:</span>
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">print</span>&#40;<span style="color:brown;">"NO!"</span>&#41;
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <div class="content title">
+                <div class="space-y-2">
+                    <p>Python also has many built-in functions that return a boolean value, like the <code
+                            class="p-data">isinstance()</code> function, which can be used to determine if an object is
+                        of a certain data type:</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm mb-2">Check if an object is an integer or not:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>x =
+                        <span class="text-red-600">200</span>
+                    </div>
+                    <div>
+                        <span class="text-blue-600">print</span>(<span class="text-blue-600">isinstance</span>(x, <span
+                            class="text-blue-600">int</span>))
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <div style="margin-bottom: 0%;">
+                <a href="{{ url_for('views.stringMethods') }}" class="button-link btn-primary">
+                    <button class="btn btn-primary">Previous</button>
+                </a>
+                <a href="{{ url_for('views.operators') }}" class="button-link btn-primary float-right">
+                    <button class="btn btn-primary">Next</button>
+                </a>
+            </div>
+        </div>
+        <hr class="my-3">
+        <h2 class="text-3xl">Exercise</h2>
+        <br>
+        <div class="content-4 space-y-3 rounded-lg bg-black p-4">
+            <h2 class="text-3xl text-white">True or False</h2>
+            <div class="bg-white p-2 pl-3 flex flex-col relative">
+                <p>The statement below would print a Boolean value, which one?</p>
+                <code>print(10 > (9 > 11))</code>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+            <div class="form-check mt-3">
+                <input class="form-check-input" type="radio" name="booleanValue" id="trueOption" value="true">
+                <label class="text-white" for="trueOption">
+                    True
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="booleanValue" id="falseOption" value="false">
+                <label class="text-white" for="falseOption">
+                    False
+                </label>
+            </div>
+            <button type="button" onclick="checkAnswer()" class="btn btn-primary mt-3">Check Answer</button>
+            <p id="exercise-feedback" class="text-red-600 mt-2"></p>
+        </div>
+
+        <script>
+            function sendChat(message) {
+                // Implement the sendChat function here
+                console.log(message); // For demonstration purposes
+            }
+
+            function checkAnswer() {
+                var userAnswer = document.querySelector('input[name="booleanValue"]:checked').value;
+                var correctAnswer = "true";
+
+                if (userAnswer === correctAnswer) {
+                    document.getElementById('exercise-feedback').innerHTML = "Correct!";
+                    document.getElementById('exercise-feedback').classList.remove('text-red-600');
+                    document.getElementById('exercise-feedback').classList.add('text-green-600');
+                } else {
+                    document.getElementById('exercise-feedback').innerHTML = "Incorrect. Try again!";
+                    document.getElementById('exercise-feedback').classList.remove('text-green-600');
+                    document.getElementById('exercise-feedback').classList.add('text-red-600');
+                    sendChat("The statement 'print(10 > (9 > 11))' would print a Boolean value, which one? True or False? Why?");
+                }
+            }
+        </script>
+
+    </div>
+</div>
+{% endblock %}

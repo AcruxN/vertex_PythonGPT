@@ -1,0 +1,282 @@
+{% extends "base.html" %}
+
+{% block title %}Python While Loops{% endblock %}
+
+{% block content %}
+<style>
+    td {
+        padding: 8px;
+    }
+
+    .p-data {
+        background-color: rgba(222, 222, 222, 0.3);
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .border-table-datatype tr:nth-child(even) {
+        background-color: #E7E9EB;
+    }
+
+    .border-table {
+        margin: 20px 0;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        display: table;
+    }
+
+    .border-table-datatype th,
+    .border-table-datatype td {
+        padding: 8px 8px;
+        display: table-cell;
+        text-align: left;
+        vertical-align: top;
+        padding-left: 16px;
+    }
+</style>
+<div class="">
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python While Loops 𓆏</p>
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.ifelse') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.forloops') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-4">
+        <div class="content-1 space-y-3">
+            <div class="content title">
+
+                <style>
+                    p:first-of-type {
+                        margin-bottom: 20px;
+                    }
+                </style>
+
+                <div class="text-3xl">Python Loops</div>
+            </div>
+            <style>
+                .boxed {
+                    border: 1px solid black;
+                    padding: 10px;
+                    min-width: 300px;
+                }
+            </style>
+            <div>
+                <tr>
+                    <p>Python has two kinds of loop :</p>
+                    <ul style="list-style-type: disc; color: black;">
+                        <li><code class="p-data">while</code> loops</li>
+                        <li><code class="p-data">for</code> loops</li>
+                    </ul>
+
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="text-3xl">The while Loop</div>
+                    <br>
+                    <p>
+                        ChatGPT
+                        Using the <code class="p-data">for</code> loop, we can run a set of statements for each item in
+                        a list, tuple, set, or
+                        similar sequence.</p>
+                </tr>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <br>
+            </div>
+            <div class=" rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-md mb-3">Print i if i lesser than 5:
+                </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div><span class="text-black">i = <span class="text-red-600">1</span></div>
+                    <div><span class="text-blue-600">while</span> i &lt; <span class="text-red-600">5</span>:</div>
+                    <div><span class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print</span> &#40; i &#41;
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i += <span class="text-red-600">1</span></div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <br>
+            <div style="background-color: #FFFACD; padding: 26px; border-radius: 5px;">
+                <b>Note:</b> Make sure to increment i, otherwise, the loop will run indefinitely. .
+            </div>
+
+        </div><br>
+        <div class="content-2 space-y-3">
+            <div class="space-y-2">
+                <p>
+                    ChatGPT
+                    The <code class="p-data">while</code> loop requires the necessary variables to be initialized. In
+                    this example, we need to define an indexing variable, <code class="p-data">i</code>, and set it to
+                    1.
+                </p>
+            </div>
+            <hr>
+
+
+            <div class="text-3xl">The break Statement</div>
+            <div>
+                <p>The <code class="p-data">break</code> statement can force the loop to stop even if the condition is
+                    true:</p>
+            </div>
+
+            <div class=" rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div>
+                    <p>Break the loop when i is 4:</p>
+                </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>i = <span class="text-red-600">1</span></div>
+                    <div><span class="text-blue-600">while</span> i &lt; <span class="text-red-600">6</span>:
+                    </div>
+                    <div><span class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print</span><span
+                            class="text-black"></span>&#40; i &#41;</div>
+                    <div><span class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if</span> i == <span
+                            class="text-red-600">4</span>:</div>
+                    <div><span
+                            class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</span>
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i += <span class="text-red-600">1</span></div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+
+            <hr>
+
+
+            <div class="text-3xl">The continue Statement</div>
+            <div>
+                <p>Basically the <code class="p-data">continue</code> statement will skip the current statement and run
+                    next iteration:</p>
+            </div>
+
+            <div class=" rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div>
+                    <p>Continue to the next iteration if i is 4:</p>
+                </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>i = <span class="text-red-600">1</span></div>
+                    <div><span class="text-blue-600">while</span> i &lt; <span class="text-red-600">7</span>:
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i += <span class="text-red-600">4</span></div>
+                    <div><span class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if</span> i == <span
+                            class="text-red-600">3</span>:</div>
+                    <div><span
+                            class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue</span>
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">print</span>&#40; i &#41;</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+
+            <hr>
+
+
+            <div class="text-3xl">The else Statement</div>
+            <div>
+                <p>The <code class="p-data">else</code> statement allows us to execute a block of code once the
+                    condition is no longer true:</p>
+            </div>
+
+            <div class=" rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div>
+                    <p>Print a message once the condition is false:</p>
+                </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>i = <span class="text-red-600">1</span></div>
+                    <div><span class="text-blue-600">while</span> i &lt; <span class="text-red-600">7</span>:
+                    </div>
+                    <div><span class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print</span><span
+                            class="text-black"></span>&#40; i &#41;</div>
+                    <div><span class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i</span> += <span
+                            class="text-red-600">1</span></div>
+                    <div><span class="text-blue-600">else</span>:</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">print</span>&#40;<span
+                            class="text-red-600">"i is bigger than 6 now"</span>&#41;</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+
+            <style>
+                .exerciseprecontainer {
+                    background-color: #f2f2f2;
+                    /* Grey background color */
+                    padding: 10px;
+                    /* Add padding for spacing */
+                }
+            </style>
+            <div style="margin-bottom: 0%;">
+                <a href="{{ url_for('views.ifelse') }}" class="button-link ">
+                    <button class="btn btn-primary">Previous</button>
+                </a>
+                <a href="{{ url_for('views.forloops') }}" class="button-link btn-primary float-right">
+                    <button class="btn btn-primary">Next</button>
+                </a>
+            </div>
+            <br>
+            <div class="content-3 space-y-3 rounded-lg bg-black p-4">
+                <h2 class="text-3xl text-white">Try this Exercise</h2>
+
+                <div class="bg-white p-2 pl-3 flex flex-col relative">
+                    <div>
+                        <p>Print <code class="p-data">i</code> as long as <code class="p-data">i</code> is less than 6.
+                        </p>
+                    </div>
+                    <div>i = 1</div>
+                    <div>_____&lt;_____</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print &#40;i&#41;</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i += 1</div>
+                    <div class="text-green-600"># Fill in the correct answer for line 2</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+                <input type="text" id="userAnswer"
+                    class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Enter your answer here">
+                <button type="button" onclick="submitAnswer()" class="btn btn-success mt-3">Submit</button>
+                <p id="exercise-feedback" class="text-red-600 mt-2"></p>
+            </div>
+
+            <script>
+                function submitAnswer() {
+                    const userAnswer = document.getElementById('userAnswer').value;
+                    const correctAnswer = "while i < 6:";
+                    const feedbackElement = document.getElementById('exercise-feedback');
+
+                    if (userAnswer.trim() === correctAnswer) {
+                        feedbackElement.innerHTML = "Correct!";
+                        feedbackElement.classList.remove('text-red-600');
+                        feedbackElement.classList.add('text-green-600');
+                    } else {
+                        feedbackElement.innerHTML = "Incorrect. Try again!";
+                        feedbackElement.classList.remove('text-green-600');
+                        feedbackElement.classList.add('text-red-600');
+                        const message = `'''Print i as long as i is less than 6. What will be the asnwer? What is the answer for the empty field?
+                        i = 1
+                        ____________
+                            print(i)
+                            i += 1
+                        # User's answer:`;
+                        sendChat(message);
+                    }
+                }
+            </script>
+
+
+
+
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Output Variables{% endblock %}
+
+{% block content %}
+
+<div class="header space-y-3 py-4 px-5">
+    <p class="text-4xl font-bold">Python - Output Variables
+    </p>
+    <div style="margin-bottom: 0%;">
+        <a href="{{ url_for('views.assignMultipleValues') }}" class="button-link ">
+            <button class="btn btn-primary">Previous</button>
+        </a>
+        <a href="{{ url_for('views.datatypes') }}" class="button-link btn-primary float-right">
+            <button class="btn btn-primary">Next</button>
+        </a>
+    </div>
+</div>
+<div class="px-12 pb-4">
+    <hr class="my-4">
+    <div class="content-1 space-y-3">
+        <div class="content title">
+            <div class="text-3xl">Output Variables
+            </div><br>
+            <p>The Python <code>print()</code> function is commonly employed to display variables.</p>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div class="content-1 space-y-3">
+        <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div>x = <span class="text-red-600">"Python is fantastic"</span></div>
+                <div><span class="text-blue-600">print</span>(x)</div>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+        <p>Multiple variables can be produced using the <code>print()</code> function, with each variable being
+            separated by a comma.</p>
+        <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div>x = <span class="text-red-600">"Python"</span></div>
+                <div>y = <span class="text-red-600">"is"</span></div>
+                <div>z = <span class="text-red-600">"awesome"</span></div>
+
+                <div><span class="text-blue-600">print</span>(x,y,z)</div>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+        <p>You can also utilize the <code>+</code> operator to display multiple variables.</p>
+        <div style="background-color: #FFFACD; padding: 26px; border-radius: 5px;">
+            <b>Note:</b> Please observe the space character after <code>"Python "</code> and <code>"is "</code>; without
+            them, the result would be "Pythonisawesome".
+        </div>
+        <div>For numbers, the <code>+</code> character works as a mathematical operator:
+
+        </div>
+
+        <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div>x = <span class="text-red-600">50</span></div>
+                <div>y = <span class="text-red-600">100</span></div>
+
+                <div><span class="text-blue-600">print</span>(x + y)</div>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+
+        <p>When attempting to combine a string and a number using the + operator within the <code>print()</code>
+            function, Python will raise an error.</p>
+        <div class="rounded-lg bg-red-200 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div>x = <span class="text-red-600">5</span></div>
+                <div>y = <span class="text-red-600">"Ian"</span></div>
+
+                <div><span class="text-blue-600">print</span>(x + y)</div>
+
+                <div class="absolute top-0 left-0 bg-red-600 p-0.5 h-full"></div>
+            </div>
+        </div>
+
+        <p>The optimal method for outputting multiple variables in the <code>print()</code> function is to separate them
+            with commas, a technique that even accommodates various data types.</p>
+        <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div>x = <span class="text-red-600">50</span></div>
+                <div>y = <span class="text-red-600">"Ian"</span></div>
+
+                <div><span class="text-blue-600">print</span>(x,y)</div>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.assignMultipleValues') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.datatypes') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

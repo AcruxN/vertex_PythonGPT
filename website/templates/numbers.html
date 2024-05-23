@@ -1,0 +1,305 @@
+{% extends "base.html" %}
+
+{% block title %}Numbers{% endblock %}
+
+{% block content %}
+<!-- Writee our mian content here -->
+<div>
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python Numbers</p>
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.datatypes') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.casting') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-4">
+        <div class="content-1 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Python Numbers</div><br>
+                <p>The three numeric types in Python:</p>
+                <ul class="list-disc ml-4 text-red-600">
+                    <li>int</li>
+                    <li>float</li>
+                    <li>complex</li>
+                </ul>
+                <p>Numeric types are instantiated when you assign a value to them:</p>
+
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="bg-black w-full p-2 flex flex-col relative">
+                            <div class="text-white">>>> x = 30 # int</div>
+                            <div class="text-white">y = 31.2 # float</div>
+                            <div class="text-white">z = 1j # complex</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-5">
+                    <lottie-player src="https://lottie.host/1fc4a37e-b3b8-4cb9-b80b-a04981ce7fc5/8EYEvlr6z3.json"
+                        background="##FFFFFF" speed="1" style="height:150px; width:150px;" loop autoplay direction="1"
+                        mode="normal"></lottie-player>
+                </div>
+            </div>
+            <p>A complex number consists of a real part and an imaginary part, with the imaginary part denoted by a
+                number followed by the imaginary unit. For instance, in 4j+3, 4j is the imaginary part where j
+                represents the imaginary unit, and 3 is the real part.</p>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div class="text-red-600"><span class="text-blue-600">print</span> <span class="text-black">(</span>
+                        <span class="text-blue-600">type</span><span class="text-black">(x) )</span><br>
+                        <span class="text-blue-600">print</span> <span class="text-black">(</span> <span
+                            class="text-blue-600">type</span><span class="text-black">(y) )</span><br>
+                        <span class="text-blue-600">print</span> <span class="text-black">(</span> <span
+                            class="text-blue-600">type</span><span class="text-black">(z) )</span>
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+
+        </div>
+        <hr class="my-4">
+
+        <!--int-->
+        <div class="content-2 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Int</div>
+                <div class="space-y-2">
+                    <p>An integer (int) is a whole number, either positive or negative, without decimal points, and can
+                        be of unlimited length.</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="mb-2">Integer: </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div class="text-red-600"><span class="text-black">x = </span> 1 </div>
+                    <div class="text-red-600"><span class="text-black">y = </span> 327947392 </div>
+                    <div class="text-red-600"><span class="text-black">z = </span> -438982 </div><br>
+
+                    <div class="text-red-600"><span class="text-blue-600">print</span> <span class="text-black">(</span>
+                        <span class="text-blue-600">type</span><span class="text-black">(x) )</span><br>
+                        <span class="text-blue-600">print</span> <span class="text-black">(</span> <span
+                            class="text-blue-600">type</span><span class="text-black">(y) )</span><br>
+                        <span class="text-blue-600">print</span> <span class="text-black">(</span> <span
+                            class="text-blue-600">type</span><span class="text-black">(z) )</span>
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+        </div><br>
+        <hr class="my-4">
+
+        <!--float-->
+        <div class="content-2 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Float</div>
+                <div class="space-y-2">
+                    <p>A float, or "floating-point number," is a number that can be positive or negative and may contain
+                        one or more decimal points.</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="mb-2">Floats:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div class="text-red-600"><span class="text-black">x = </span> 21.10 </div>
+                    <div class="text-red-600"><span class="text-black">y = </span> 31.0 </div>
+                    <div class="text-red-600"><span class="text-black">z = </span> -3.59 </div><br>
+
+                    <div class="text-red-600"><span class="text-blue-600">print</span> <span class="text-black">(</span>
+                        <span class="text-blue-600">type</span><span class="text-black">(x) )</span><br>
+                        <span class="text-blue-600">print</span> <span class="text-black">(</span> <span
+                            class="text-blue-600">type</span><span class="text-black">(y) )</span><br>
+                        <span class="text-blue-600">print</span> <span class="text-black">(</span> <span
+                            class="text-blue-600">type</span><span class="text-black">(z) )</span>
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <p>Floats can also represent scientific numbers using "e" to denote the power of 10.</p>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="mb-2">Flaots:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div class="text-red-600"><span class="text-black">x = </span> 5e3 </div>
+                    <div class="text-red-600"><span class="text-black">y = </span> 2je6 </div>
+                    <div class="text-red-600"><span class="text-black">z = </span> -98.5e232 </div><br>
+
+                    <div class="text-red-600"><span class="text-blue-600">print</span> <span class="text-black">(</span>
+                        <span class="text-blue-600">type</span><span class="text-black">(x) )</span><br>
+                        <span class="text-blue-600">print</span> <span class="text-black">(</span> <span
+                            class="text-blue-600">type</span><span class="text-black">(y) )</span><br>
+                        <span class="text-blue-600">print</span> <span class="text-black">(</span> <span
+                            class="text-blue-600">type</span><span class="text-black">(z) )</span>
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+        </div><br>
+        <hr class="my-4">
+
+        <!--complex-->
+        <div class="content-2 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Complex</div>
+                <div class="space-y-2">
+                    <p>Complex numbers are written with a "j" as the imaginary part:</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="mb-2">Complex: </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div class="text-red-600"><span class="text-black">x = </span> 3 <span class="text-black">+5j
+                        </span> </div>
+                    <div class="text-red-600"><span class="text-black">y = 5j </span> </div>
+                    <div class="text-red-600"><span class="text-black">z = -5j</span> </div><br>
+
+                    <div class="text-red-600"><span class="text-blue-600">print</span> <span class="text-black">(</span>
+                        <span class="text-blue-600">type</span><span class="text-black">(x) )</span><br>
+                        <span class="text-blue-600">print</span> <span class="text-black">(</span> <span
+                            class="text-blue-600">type</span><span class="text-black">(y) )</span><br>
+                        <span class="text-blue-600">print</span> <span class="text-black">(</span> <span
+                            class="text-blue-600">type</span><span class="text-black">(z) )</span>
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+        </div><br>
+        <hr class="my-4">
+
+        <!-- type conversion-->
+        <div class="content-2 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Type Conversion</div>
+                <div class="space-y-2">
+                    <p>You can convert between different types using the int(), float(), and complex() methods:</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="mb-2">Convert from one type to another: </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div class="text-red-600"><span class="text-black">x = </span> 3 <span class="text-green-600">&nbsp
+                            &nbsp &nbsp# int </span> </div>
+                    <div class="text-red-600"><span class="text-black">y = </span> 2.8 <span
+                            class="text-green-600">&nbsp # float </span></div>
+                    <div class="text-red-600"><span class="text-black">z = -5j</span> <span class="text-green-600">&nbsp
+                            # complex </span></div><br>
+                    <div class="text-green-600">#convert from int to float:</div>
+                    <div class="text-black">a = <span class="text-blue-600">float</span>(x)</div><br>
+                    <div class="text-black-600">#convert from float to int:</div>
+                    <div class="text-balck">b = <span class="text-blue-600">int</span>(y)</div><br>
+                    <div class="text-green-600">#convert from int to complex:</div>
+                    <div class="text-black">c = <span class="text-blue-600">complex</span>(x)</div><br>
+                    <div class="text-blue-600">print<span class="text-black">(a)</span>(x)</div>
+                    <div class="text-blue-600">print<span class="text-black">(b)</span>(x)</div>
+                    <div class="text-blue-600">print<span class="text-black">(c)</span>(x)</div><br>
+                    <div class="text-blue-600">print<span class="text-black"> (</span>type<span
+                            class="text-black">(a))</span></div>
+
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <div class="space-y-2 bg-amber-100 py-4 px-4">
+                <p><span class="font-semibold">Note:</span> Complex numbers cannot be converted into other numerical
+                    types.</p>
+            </div>
+        </div><br>
+        <hr class="my-4">
+
+        <!--random number-->
+        <div class="content-2 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Random Number</div>
+                <div class="space-y-2">
+                    <p>Python doesn't feature a <span class="text-red-600 bg-gray-200">random()</span> function for
+                        generating random numbers directly. However, Python offers a built-in module named <span
+                            class="text-red-600 bg-gray-200">random</span> for this purpose:</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="mb-2">Import the random module and output a random number between 1 and 9:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div><span class="text-blue-600">import</span> random </div>
+                    <div><span class="text-blue-600">print</span> (random.randrange(<span class="text-red-600"> 1<span
+                                class="text-black">
+                                , </span>3</span>)) </div>
+
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <div style="margin-bottom: 0%;">
+                <a href="{{ url_for('views.datatypes') }}" class="button-link ">
+                    <button class="btn btn-primary">Previous</button>
+                </a>
+                <a href="{{ url_for('views.casting') }}" class="button-link btn-primary float-right">
+                    <button class="btn btn-primary">Next</button>
+                </a>
+            </div>
+        </div>
+        <hr class="my-4">
+
+        <!--Think yourself-->
+
+        <h2 class="text-3xl">Think Yourself</h2>
+        <br>
+        <div class="content-3 space-y-3 rounded-lg bg-black p-4">
+            <h2 class="text-3xl text-white">Guess the output of x, y, z</h2>
+            <div class="bg-white p-2 pl-3 flex flex-col relative">
+                <div>x = 10</div>
+                <div>y = 3.5 </div>
+                <div>z = 3 + 1j</div>
+                <div>print(type(x), type(y), type(z))</div>
+                <div class="text-green-600"># Fill in correct answer</div>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+            <input type="text" id="userAnswer"
+                class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your answer here">
+            <button type="button" onclick="submitAnswer()" class="btn btn-success mt-3">Submit</button>
+            <p id="exercise-feedback" class="text-red-600 mt-2"></p>
+        </div>
+
+        <script>
+
+
+            function submitAnswer() {
+                const userAnswer = document.getElementById('userAnswer').value;
+                const correctAnswer = "<class 'int'> <class 'float'> <class 'complex'>";
+                const feedbackElement = document.getElementById('exercise-feedback');
+
+                if (userAnswer.trim() === correctAnswer) {
+                    feedbackElement.innerHTML = "Correct!";
+                    feedbackElement.classList.remove('text-red-600');
+                    feedbackElement.classList.add('text-green-600');
+                } else {
+                    feedbackElement.innerHTML = "Incorrect. Try again!";
+                    feedbackElement.classList.remove('text-green-600');
+                    feedbackElement.classList.add('text-red-600');
+                    const message = `'''What is the answer for below code, and why?
+                x = 10
+                y = 3.5
+                z = complex(1, 2)
+                print(type(x), type(y), type(z))'''
+                `;
+                    sendChat(message);
+                }
+            }
+        </script>
+
+    </div>
+</div>
+{% endblock %}

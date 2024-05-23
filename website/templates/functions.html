@@ -1,0 +1,660 @@
+{% extends "base.html" %}
+
+{% block title %}Functions{% endblock %}
+
+{% block content %}
+<!-- Writee our mian content here -->
+<div>
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python Functions</p>
+        <!--<button type="button" class="btn btn-primary" onclick="redirectToPrevious()">Previous</button>
+        <button type="button" class="btn btn-primary float-right" onclick="redirectToNext()">Next</button>-->
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.forloops') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.lambdas') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="px-12 pb-4">
+        <hr class="my-4">
+
+        <div>
+            <p>A function is a reusable block of code designed to perform a specific task. <br>
+                It takes input, processes it, and returns an output. <br></p><br>
+            <hr class="my-4">
+        </div>
+        <!-- Creating a function-->
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Creating a Function</div><br>
+                    <div class="space-y-2">
+                        <p>In Python you can use <span class="text-red-600 bg-grey-300">def</span>
+                            keyword to create a function.
+                        </p>
+                    </div>
+                </div>
+                <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                    <div class="text-xl mb-2">Example</div>
+                    <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                        <div><span class="text-blue-600">def </span>first_function(): </div>
+                        <div><span class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;print</span>(<span
+                                class="text-red-600">"Hellow word" </span>) </div>
+
+                        <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <!-- Calling a function-->
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Calling a Function</div><br>
+                    <div class="space-y-2">
+                        <p>To call a function, you can use the function name followed by required parenthesis:
+                        </p>
+                    </div>
+                </div>
+                <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                    <div class="text-xl mb-2">Example</div>
+                    <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                        <div><span class="text-blue-600">def </span>first_function(): </div>
+                        <div><span class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;print print</span>(<span
+                                class="text-red-600">"Hello from a
+                                function" </span>) </div>
+
+                        <div class="font-semibold">my_function()</div>
+                        <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <!--Arguments-->
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Arguments</div><br>
+                    <div class="space-y-2">
+                        <p>Data can be provided to functions through arguments.</p><br>
+                        <p>Arguments are listed after the function name within parentheses. You can include multiple
+                            arguments by separating them with commas.</p><br>
+
+                        <br>
+                    </div>
+                </div>
+                <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                    <div class="text-xl mb-2">Example</div>
+                    <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                        <div><span class="text-blue-600">def </span>first_function(): </div>
+                        <div><span class="text-blue-600"> &nbsp;&nbsp;&nbsp;&nbsp;printprint</span>(fname +<span
+                                class="text-red-600">" Lee "
+                            </span>) </div><br>
+
+                        <div>my_function (<span class="text-red-600 font-semibold">"Adam"</span>)</div>
+                        <div>my_function (<span class="text-red-600 font-semibold">"Edward"</span>)</div>
+                        <div>my_function (<span class="text-red-600 font-semibold">"Koma"</span>)</div>
+
+                        <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p class="bg-amber-100 py-4 px-4">Arguments can be written as args in Python documentations</p>
+        <hr class="my-4">
+
+        <!--Parameters or Arguments?-->
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Parameters or Arguments?</div><br>
+                    <div class="space-y-2">
+                        <p>Parameters and arguments are information that are passed
+                            into a function.</p><br>
+                    </div>
+                    <div class="space-y-2 bg-amber-100 py-4 px-4">
+                        <p>From a function's perspective:</p><br>
+                        <p>Parameter: the variable listed inside the parentheses in the function definition.</p><br>
+                        <p>Argument: the value that is sent to the function when it is called.</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <!--Numbers of Arguments?-->
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Number of Arguments</div><br>
+                    <div class="space-y-2">
+                        <p>By default, functions must be called with the correct number of arguments.
+                            This means that if your function needs two arguments, you must call the function with two
+                            arguments, no more and no less.
+                        </p><br>
+                    </div>
+                </div>
+                <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                    <div class="text-xl mb-2">Example</div>
+                    <div class="mb-2">This need 2 arguments:</div>
+                    <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                        <div><span class="text-blue-600"> def </span>first_function(fname,lname): </div>
+                        <div><span class="text-blue-600"> &nbsp;&nbsp; </span>print(fname + <span class="text-red-600">"
+                                "</span>+ lname) </div><br>
+                        <div>my_function(<span class="text-red-600">"Ahmed", "Tohai"</span>)</div>
+                        <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                    </div>
+                </div><br>
+                <p>If you call the function with 3 arguments, the code will have an error:</p><br>
+                <div class="rounded-lg bg-red-200 p-3 w-full h-auto mt-2">
+                    <div class="text-xl mb-2">Example</div>
+                    <div class="mb-2">This function expects 2 arguments, but gets only 1:</div>
+                    <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                        <div><span class="text-blue-600"> def </span>my_function(fname,lname): </div>
+                        <div><span class="text-blue-600"> &nbsp;&nbsp; </span>print(fname + <span class="text-red-600">"
+                                "</span>+ lname) </div><br>
+                        <div>my_function(<span class="text-red-600">"Hulala"</span>)</div>
+                        <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <!--Arbitrary Arguments, *args-->
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Arbitrary Arguments, *args</div>
+                    <div class="space-y-2">
+                        <br>
+                        <p>f you're unsure about the number of arguments that will be passed to your function, prefix
+                            the parameter name with an asterisk (*) in the function definition.</p>
+                        <br>
+                        <p>This allows the function to accept a tuple of arguments and access each item as needed:</p>
+                        <br>
+                    </div>
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="mb-2">If you don't know the number of arguments, add a <span
+                                class="text-red-600">*</span> before the parameter name:</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>first_function(*things): </div>
+                            <div><span class="text-blue-600"> &nbsp;&nbsp; </span>print &#40;<span
+                                    class="text-red-600">"The largest things is"
+                                </span>+ things[2]&#41; </div><br>
+                            <div>first_fucntion(<span class="text-red-600">"Apple", "Watermelon", "Lemon" </span>)</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                    <div class="space-y-2 bg-amber-100 py-4 px-4">
+                        <p>Arbitrary Arguments can be write as *args in Python documentations.</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <!--Keyword Arguments-->
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Keyword Arguments</div>
+                    <div class="space-y-2">
+                        <br>
+                        <p>You can also send arguments with the <i>key = value</i> syntax to make sure the arguments are
+                            used in correct parameters</p>
+                        <br>
+                    </div>
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>chiled_function(child1, child2, child3): </div>
+                            <div><span class="text-blue-600"> &nbsp;&nbsp; </span>print &#40;<span
+                                    class="text-red-600">"The
+                                    largest child is"
+                                </span>+ child1&#41; </div><br>
+                            <div>my_function&#40;child1 = <span class="text-red-600">"Emil"</span>, child2 =<span
+                                    class="text-red-600">"Tobias" </span>, child3 =
+                                <span class="text-red-600">"Linus"</span>
+                                &#41;
+                            </div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                    <div class="space-y-2 bg-amber-100 py-4 px-4">
+                        <p>Arbitrary Arguments can be write as *args in Python documentations.</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <!--Arbitrary Keyword Arguments, **kwargs-->
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Arbitrary Keyword Arguments, **kwargs</div>
+                    <div class="space-y-2">
+                        <br>
+                        <p>Add two
+                            asterick: <code class="p-data">**</code>
+                            before the parameter in the function definition, if you do not know how many keywords that
+                            will be passed into your function, </p>
+                        <br>
+                        <p>This way the function will receive a <i>dictionary</i> or arguments, and can access the items
+                            accordingly</p><br>
+                    </div>
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>my_function(**kid): </div>
+                            <div><span class="text-blue-600"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>print
+                                &#40;<span class="text-red-600">"His last name is "
+                                </span>+ kid[<span class="text-red-600"> " lname " </span>] &#41; </div><br>
+                            <div>my_function&#40; fname = <span class="text-red-600">" Tobias "</span>, lname =<span
+                                    class="text-red-600"> " Refsnes " </span>
+                                &#41;</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                    <div class="space-y-2 bg-amber-100 py-4 px-4">
+                        <p>Arbitrary Kword Arguments are often shortened to <i>**kwargs</i> in Python documentations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <!--Default Parameter Value-->
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Default Parameter Value</div><br>
+                    <div class="space-y-2">
+                        <p>You can set default parameters for function.</p>
+                        <br>
+                        <p></p><br>
+                    </div>
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>kid_function(name = "Adeline"): </div>
+                            <div><span class="text-blue-600"> &nbsp;&nbsp;print </span> （<span class="text-red-600">"My
+                                    kid's name is "
+                                </span>+ name&#41; </div><br>
+                            <div>kid_function(<span class="text-red-600">"Abdul" </span>)</div>
+                            <div>kid_function(<span class="text-red-600">"Shaman" </span>)</div>
+                            <div>kid_function(<span class="text-red-600"> </span>)</div>
+                            <div>kid_function(<span class="text-red-600">"Luho" </span>)</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <!--Passing a list as an argument-->
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Passing a List as an Argument</div><br>
+                    <div class="space-y-2">
+                        <p>You can send any types of argument to a function including string, number, list, dictionary
+                            etc.</p>
+                        <br>
+
+                    </div>
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>fruits_function(fruit): </div>
+                            <div><span class="text-blue-600"> &nbsp;&nbsp; for </span>x <span class="text-blue-600"> in
+                                </span> food: </div><br>
+                            <div><span class="text-blue-600"> &nbsp;&nbsp; print </span>x</div><br>
+                            <div>fruits = [<span class="text-red-600">"apple", "banana", "cherry" </span>]</div><br>
+                            <div>fruits_function(fruits)</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <!--Return values-->
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Return Values</div><br>
+                    <div class="space-y-2">
+                        <p>We can use the <code class="p-data">return</code> statement to let function return a value:
+                        </p>
+                        <br>
+                    </div>
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>multiplication_function(x): </div>
+                            <div class="font-semibold"><span class="text-blue-600"> &nbsp;&nbsp;&nbsp;&nbsp; return
+                                </span><span class="text-red-600"> 5
+                                </span> * x</div><br>
+                            <div><span class="text-blue-600">print </span>(multiplication_function(<span
+                                    class="text-red-600">3</span>))</div>
+                            <div><span class="text-blue-600">print </span>(multiplication_function(<span
+                                    class="text-red-600">5</span>))</div>
+                            <div><span class="text-blue-600">print </span>(multiplication_function(<span
+                                    class="text-red-600">9</span>))</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <!--The pass Statement-->
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">The pass Statement </div><br>
+                    <div class="space-y-2">
+                        <p>For some reason, if you want let the <code class="p-data">function</code> definition be
+                            empty, you can use
+                            class="p-data">pass</code>statement to avoid getting an error.
+                        </p>
+                        <br>
+                    </div>
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>my_function(x): </div>
+                            <div class="font-semibold"><span
+                                    class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass </span></div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <!--Positional-Only Arguments-->
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Positional-Only Arguments</div><br>
+                    <div class="space-y-2">
+                        <p>You can specify that a function can have ONLY positional argumnets, or ONLY keyword
+                            arguments.</p>
+                        <p>To specify that a function can have only positional arguments, add <code
+                                class="p-data">, /</code> after the arguments:</p>
+                        <br>
+                    </div>
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>my_function(x): </div>
+                            <div class="font-semibold"><span
+                                    class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </span>&#40; x &#41;
+                            </div><br>
+                            <div>my_function&#40;<span class="text-red-600"> 3 </span>&#41;</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="space-y-2">
+                        <p>Without the <code class="p-data">, /</code> you are actually allowed to use keyword arguments
+                            even if the function expects positional arguments:</p>
+                        <br>
+                    </div>
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>my_function(x): </div>
+                            <div class="font-semibold"><span
+                                    class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </span>&#40; x &#41;
+                            </div><br>
+                            <div>my_function&#40; x =<span class="text-red-600"> 3 </span>&#41;</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="space-y-2">
+                        <p>But when adding the <code class="p-data">, /</code> you will get an error if you try to send
+                            a keyword argument:
+                    </div>
+                    <div class="rounded-lg bg-red-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>my_function(x, /): </div>
+                            <div class="font-semibold"><span
+                                    class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </span>&#40; x &#41;
+                            </div><br>
+                            <div>my_function&#40; x =<span class="text-red-600"> 3 </span>&#41;</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Keyword-Only Arguments</div><br>
+                    <div class="space-y-2">
+                        <p>To specify that a function can have only keyword arguments, add <code
+                                class="p-data">*,</code> before the arguments:</p>
+                    </div>
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>my_function(*,&nbsp;x): </div>
+                            <div class="font-semibold"><span
+                                    class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </span>&#40; x &#41;
+                            </div><br>
+                            <div>my_function&#40; x =<span class="text-red-600"> 3 </span>&#41;</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="space-y-2">
+                        <p>But when adding the <code class="p-data">*, /</code> you will get an error if you try to send
+                            a positional argument:</p>
+                    </div>
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>my_function(*,&nbsp;x): </div>
+                            <div class="font-semibold"><span
+                                    class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </span>&#40; x &#41;
+                            </div><br>
+                            <div>my_function&#40; x =<span class="text-red-600"> 3 </span>&#41;</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="space-y-2">
+                        <p>To specify that a function can have only keyword arguments, add <code
+                                class="p-data">*,</code> before the arguments:</p>
+                    </div>
+                    <div class="rounded-lg bg-red-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>my_function(*,&nbsp;x): </div>
+                            <div class="font-semibold"><span
+                                    class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </span>&#40; x &#41;
+                            </div><br>
+                            <div>my_function&#40; x =<span class="text-red-600"> 3 </span>&#41;</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+            <hr class="my-4">
+        </div>
+
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Combine Positional-Only and Keyword-Only
+                    </div><br>
+                    <div class="space-y-2">
+                        <p>Combine Positional-Only and Keyword-Only
+                        </p>
+                        <p>Any argument before the <code class="p-data">/ ,</code> are positional-only, and any argument
+                            after the <code class="p-data">*,</code> are keyword-only.</p>
+
+                    </div>
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>my_function(a, b, /, *, c, d): </div>
+                            <div class="font-semibold"><span
+                                    class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </span>&#40; a + b +
+                                c + d &#41;</div><br>
+                            <div>my_function&#40; <span class="text-red-600"> 5</span>, <span
+                                    class="text-red-600">6</span>, c = <span class="text-red-600">7</span>, d = <span
+                                    class="text-red-600">8</span> </span>&#41;</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="content-2 space-y-3">
+                <div class="content title">
+                    <hr>
+                    <div class="text-3xl">Recursions
+                    </div><br>
+                    <div class="space-y-2">
+                        <p>Python allows function recursion, meaning a function can call itself. This is useful in both
+                            math and programming for looping through data to produce results.</p><br>
+
+                        <p>Developers should be cautious to avoid infinite loops and excessive resource use.
+                            When used properly, recursion is efficient and elegant.</p><br>
+
+                        <p>For example, the <code class="p-data">tri_recursion()</code> function calls itself with the
+                            variable <code class="p-data">k</code>which decreases by 1 each time. The recursion stops
+                            when k reaches 0.</p><br>
+
+                        <p>Recursion can be difficult to understand at first, but experimenting and modifying recursive
+                            functions can help.</p>
+                    </div>
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="text-xl mb-2">Example</div>
+                        <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                            <div><span class="text-blue-600"> def </span>tri_recursion(k): </div>
+                            <div><span class="text-blue-600"> if </span>&#40;(k > <span
+                                    class="text-red-600">0</span>)&#41;:</div><br>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = k + tri_recursion&#40;k - 1&#41;</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&#40;result&#41;</div>
+                            <div><span class="text-blue-600"> else:</div><br>
+                            <div>result = <span class="text-red-600">0</span></div>
+                            <div><span class="text-blue-600">return</span> result</div><br>
+                            <div>print&#40;<span class="text-brown-600">"\n\nRecursion Example Results"</span>&#41;
+                            </div>
+                            <div>tri_recursion&#40;<span class="text-red-600">6</span>&#41;</div>
+
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div><br>
+                </div>
+                <div style="margin-bottom: 0%;">
+                    <a href="{{ url_for('views.forloops') }}" class="button-link ">
+                        <button class="btn btn-primary">Previous</button>
+                    </a>
+                    <a href="{{ url_for('views.lambdas') }}" class="button-link btn-primary float-right">
+                        <button class="btn btn-primary">Next</button>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!--Think yourself-->
+
+        <h2 class="text-3xl">Think Yourself</h2>
+        <br>
+        <div class="content-3 space-y-3 rounded-lg bg-black p-4">
+            <p>Create a function named <code class="p-data">my_function</code>.
+            </p>
+            <div class="bg-white p-2 pl-3 flex flex-col relative">
+                <div>def my_function():</div>
+                <div> print("Hello from a function")</div>
+                <div class="text-green-600"># Fill in your correct answer for line 1</div>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+            <input type="text" id="userAnswer"
+                class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your answer here">
+            <button type="button" onclick="submitAnswer()" class="btn btn-success mt-3">Submit</button>
+            <p id="exercise-feedback" class="text-red-600 mt-2"></p>
+        </div>
+
+        <script>
+
+            function submitAnswer() {
+                const userAnswer = document.getElementById('userAnswer').value;
+                const correctAnswer = "def my_function():";
+                const feedbackElement = document.getElementById('exercise-feedback');
+
+                if (userAnswer.trim() === correctAnswer) {
+                    feedbackElement.innerHTML = "Correct!";
+                    feedbackElement.classList.remove('text-red-600');
+                    feedbackElement.classList.add('text-green-600');
+                } else {
+                    feedbackElement.innerHTML = "Incorrect. Try again!";
+                    feedbackElement.classList.remove('text-green-600');
+                    feedbackElement.classList.add('text-red-600');
+                    const message = `'''Create a function named my_function.`;
+                    sendChat(message);
+                }
+            }
+        </script>
+
+
+    </div>
+</div>
+<!-- Chat Content -->
+{% endblock %}

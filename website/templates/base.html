@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Python Chatbot{% endblock %}</title>
+    <!-- Add your CSS links here -->
+    <link rel="icon" href="static/pythonGPT_logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='output.css') }}"> -->
+</head>
+<style>
+    .nav-link {
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .active-nav {
+        font-weight: bold;
+        background-color: #34d399;
+    }
+
+    .active-nav:hover {
+        background-color: #34d399 !important;
+        color: black;
+    }
+
+    .nav-link:hover {
+        text-decoration: none;
+        color: white;
+        background-color: #4b5563;
+    }
+
+    .closeTab {
+        width: 4% !important;
+    }
+
+    .p-data {
+        background-color: rgba(222, 222, 222, 0.3);
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    #stringsDropdownContent {
+        transition: 1s ease;
+    }
+
+    .jump1,
+    .jump2,
+    .jump3,
+    .jump4,
+    .jump5 {
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+        background-color: black;
+    }
+
+    .jump1 {
+        animation: typing 1.0s linear infinite;
+        animation-delay: 01.1s;
+    }
+
+    .jump2 {
+        animation: typing 1.0s linear infinite;
+        animation-delay: 01.2s;
+    }
+
+    .jump3 {
+        animation: typing 1.0s linear infinite;
+        animation-delay: 01.3s;
+    }
+
+    .jump4 {
+        animation: typing 1.0s linear infinite;
+        animation-delay: 01.4s;
+    }
+
+    .jump5 {
+        animation: typing 1.0s linear infinite;
+        animation-delay: 1.5s;
+    }
+
+    @keyframes typing {
+        0% {
+            transform: translateY(0px);
+        }
+
+        25% {
+            transform: translateY(0px);
+        }
+
+        35% {
+            transform: translateY(15px);
+        }
+
+        45% {
+            transform: translateY(0px);
+        }
+
+        60% {
+            transform: translateY(-15px);
+        }
+
+        75% {
+            background-color: white;
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+</style>
+
+<body>
+    <script>
+        // Function to toggle sidebar state
+        function toggleSidebar() {
+            fetch('/toggle_sidebar')
+                .then(response => response.json())
+                .then(data => {
+                    // Update sidebar state based on the response
+                    if (data.sidebar_state === 'open') {
+                        closeSidebar();
+                        fetch('/toggleSidebar');
+                    } else {
+                        openSidebar();
+                        fetch('/toggleSidebar');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Function to open sidebar
+        function openSidebar() {
+            document.querySelector('#mainContent').classList.add('w-4/6');
+            document.querySelector('#mainContent').classList.remove('w-full');
+            document.querySelector('#empty').classList.add('d-none');
+            document.querySelector('#empty').classList.remove('d-block');
+            document.querySelector('#notempty').classList.remove('d-none');
+            document.querySelector('#notempty').classList.add('d-block');
+            document.querySelector('#chatBotBox').classList.remove('closeTab');
+            document.querySelector('#chatBotBox').classList.add('w-2/6');
+        }
+
+        // Function to close sidebar
+        function closeSidebar() {
+            var chatbot = document.querySelector('#chatBotBox');
+            if (chatbot.classList.contains('w-full')) {
+                document.querySelector('#chatBotBox').classList.add('w-2/6');
+                document.querySelector('#chatBotBox').classList.remove('w-full');
+                document.querySelector('#mainContent').classList.add('d-block');
+                document.querySelector('#mainContent').classList.remove('d-none');
+            }
+            document.querySelector('#mainContent').classList.add('w-full');
+            document.querySelector('#mainContent').classList.remove('w-4/6');
+            document.querySelector('#empty').classList.remove('d-none');
+            document.querySelector('#empty').classList.add('d-block');
+            document.querySelector('#notempty').classList.add('d-none');
+            document.querySelector('#notempty').classList.remove('d-block');
+            document.querySelector('#chatBotBox').classList.add('closeTab');
+            document.querySelector('#chatBotBox').classList.remove('w-2/6');
+        }
+
+        function toggleFullscreen() {
+            var main = document.querySelector('#mainContent');
+            if (main.classList.contains('d-block')) {
+                main.classList.remove('d-block');
+                main.classList.add('d-none');
+                document.querySelector('#chatBotBox').classList.add('w-full');
+                document.querySelector('#chatBotBox').classList.remove('w-2/6');
+            }
+            else {
+                main.classList.add('d-block');
+                main.classList.remove('d-none');
+                document.querySelector('#chatBotBox').classList.remove('w-full');
+                document.querySelector('#chatBotBox').classList.add('w-2/6');
+            }
+        }
+
+    </script>
+
+    <div class="">
+        <div class="grid grid-cols-9">
+            <div class="col-span-2">
+                <div class="sticky top-0 h-screen flex-col left-0">
+                    <div class="text-white">
+                        <a href="{{ url_for('views.home') }}"
+                            class="flex items-center text-white min-w-32 h-16 hover:bg-slate-300 cursor-pointer py-4 px-2 text-center block"
+                            style="background-color: rgb(61, 95, 143)">
+                            <img src="static/pythonGPT_logo.png" class="w-10 h-10 mr-2">
+                            <div style="font-weight: bold;" class='text-xl'>PythonGPT</div>
+                        </a>
+                    </div>
+                    <div class="overflow-y-auto h-screen bg-blue-200">
+                        <ul class="">
+                            <a id="syntax-link" href="{{ url_for('views.syntax') }}"
+                                class="{% if current_page == 'syntax' %}active-nav{% endif %} nav-link">
+                                <li class='py-2 px-4 cursor-pointer'>Syntax</li>
+                            </a>
+                            <a id="comments-link" href="{{ url_for('views.comments') }}"
+                                class="{% if current_page == 'comments' %}active-nav{% endif %} nav-link">
+                                <li class='py-2 px-4 cursor-pointer'>Comments</li>
+                            </a>
+                            <li class='py-2 px-4 cursor-pointer flex' onclick="vartoggleDropdown()">
+                                <div>Variable</div>
+                                <div class="flex ml-auto">
+                                    <!-- This is show down arrow -->
+
+                                    <svg id="vararrowIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                                    </svg>
+                                </div>
+                            </li>
+                            <div id="varDropdownContent"
+                                class="flex flex-col px-3 {% if current_page == 'variables' or current_page == 'variableNames' 
+                            or current_page == 'assignMultipleValues' or current_page == 'outputVariables' %} d-block {% else %} d-none {% endif %}">
+                                <a id="pythonVariable-link" href="{{ url_for('views.variables') }}"
+                                    class="{% if current_page == 'variables' %}active-nav{% endif %} nav-link"
+                                    onclick="preventDropdownClose(event)">
+                                    <li class='py-2 px-4 cursor-pointer'>Python Variables</li>
+                                </a>
+                                <a id="variableNames-link" href="{{ url_for('views.variableNames') }}"
+                                    class="{% if current_page == 'variableNames' %}active-nav{% endif %} nav-link">
+                                    <li class='py-2 px-4 cursor-pointer'>Variable Names</li>
+                                </a>
+                                <a id="assignMultipleValues-link" href="{{ url_for('views.assignMultipleValues') }}"
+                                    class="{% if current_page == 'assignMultipleValues' %}active-nav{% endif %} nav-link">
+                                    <li class='py-2 px-4 cursor-pointer'>Assign Multiple Values</li>
+                                </a>
+                                <a id="outputVariables-link" href="{{ url_for('views.outputVariables') }}"
+                                    class="{% if current_page == 'outputVariables' %}active-nav{% endif %} nav-link">
+                                    <li class='py-2 px-4 cursor-pointer'>Output Variables</li>
+                                </a>
+                            </div>
+                            <!-- <a id="variables-link" href="{{ url_for('views.variables') }}"
+                                class="{% if current_page == 'variables' %}active-nav{% endif %} nav-link">
+                                <li class='py-2 px-4 cursor-pointer'>Variables</li>
+                            </a> -->
+                            <a id="datatypes-link" href="{{ url_for('views.datatypes') }}"
+                                class="{% if current_page == 'datatypes' %}active-nav{% endif %} nav-link">
+                                <li class='py-2 px-4 cursor-pointer'>Data Types</li>
+                            </a>
+                            <a id="numbers-link" href="{{ url_for('views.numbers') }}"
+                                class="{% if current_page == 'numbers' %}active-nav{% endif %} nav-link">
+                                <li class='py-2 px-4 cursor-pointer'>Numbers</li>
+                            </a>
+                            <a id="casting-link" href="{{ url_for('views.casting') }}"
+                                class="{% if current_page == 'casting' %}active-nav{% endif %} nav-link">
+                                <li class='py-2 px-4 cursor-pointer'>Casting</li>
+                            </a>
+
+                            <li class='py-2 px-4 cursor-pointer flex' onclick="strtoggleDropdown()">
+                                <div>Strings</div>
+                                <div class="flex ml-auto">
+                                    <!-- This is show up arrow -->
+                                    <svg id="vararrowIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                                    </svg>
+                                </div>
+                            </li>
+
+                            <div id="stringsDropdownContent"
+                                class="flex flex-col px-3 {% if current_page == 'stringMethods' or current_page == 'pythonStrings' 
+                            or current_page == 'slicingStrings' or current_page == 'modifyStrings' or current_page == 'concatenateStrings' or current_page == 'formatStrings' 
+                            or current_page == 'escapeStrings' or current_page == 'stringMethods' %} d-block {% else %} d-none {% endif %}">
+                                <a id="pythonStrings-link" href="{{ url_for('views.pythonStrings') }}"
+                                    class="{% if current_page == 'pythonStrings' %}active-nav{% endif %} nav-link"
+                                    onclick="preventDropdownClose(event)">
+                                    <li class='py-2 px-4 cursor-pointer'>Python Strings</li>
+                                </a>
+                                <a id="slicingStrings-link" href="{{ url_for('views.slicingStrings') }}"
+                                    class="{% if current_page == 'slicingStrings' %}active-nav{% endif %} nav-link">
+                                    <li class='py-2 px-4 cursor-pointer'>Slicing Strings</li>
+                                </a>
+                                <a id="modifyStrings-link" href="{{ url_for('views.modifyStrings') }}"
+                                    class="{% if current_page == 'modifyStrings' %}active-nav{% endif %} nav-link">
+                                    <li class='py-2 px-4 cursor-pointer'>Modify Strings</li>
+                                </a>
+                                <a id="concatenateStrings-link" href="{{ url_for('views.concatenateStrings') }}"
+                                    class="{% if current_page == 'concatenateStrings' %}active-nav{% endif %} nav-link">
+                                    <li class='py-2 px-4 cursor-pointer'>Concatenate Strings</li>
+                                </a>
+                                <a id="formatStrings-link" href="{{ url_for('views.formatStrings') }}"
+                                    class="{% if current_page == 'formatStrings' %}active-nav{% endif %} nav-link">
+                                    <li class='py-2 px-4 cursor-pointer'>Format Strings</li>
+                                </a>
+                                <a id="escapeStrings-link" href="{{ url_for('views.escapeStrings') }}"
+                                    class="{% if current_page == 'escapeStrings' %}active-nav{% endif %} nav-link">
+                                    <li class='py-2 px-4 cursor-pointer'>Escape Characters</li>
+                                </a>
+                                <a id="stringMethods-link" href="{{ url_for('views.stringMethods') }}"
+                                    class="{% if current_page == 'stringMethods' %}active-nav{% endif %} nav-link">
+                                    <li class='py-2 px-4 cursor-pointer'>String Methods</li>
+                                </a>
+
+                            </div>
+                            <script>
+                                function strtoggleDropdown() {
+                                    var dropdownContent = document.getElementById("stringsDropdownContent");
+                                    var arrowIcon = document.getElementById("arrowIcon");
+                                    if (dropdownContent.classList.contains('d-none')) {
+                                        dropdownContent.classList.add('d-block');
+                                        dropdownContent.classList.remove('d-none');
+                                        arrowIcon.style.transform = "rotate(180deg)";
+                                    } else {
+                                        dropdownContent.classList.remove('d-block');
+                                        dropdownContent.classList.add('d-none');
+                                        arrowIcon.style.transform = "rotate(0deg)";
+                                    }
+                                }
+
+                                function vartoggleDropdown() {
+                                    var dropdownContent = document.getElementById("varDropdownContent");
+                                    var arrowIcon = document.getElementById("vararrowIcon");
+                                    if (dropdownContent.classList.contains('d-none')) {
+                                        dropdownContent.classList.add('d-block');
+                                        dropdownContent.classList.remove('d-none');
+                                        arrowIcon.style.transform = "rotate(180deg)";
+                                    } else {
+                                        dropdownContent.classList.remove('d-block');
+                                        dropdownContent.classList.add('d-none');
+                                        arrowIcon.style.transform = "rotate(0deg)";
+                                    }
+                                }
+
+                                function preventDropdownClose(event) {
+                                    event.stopPropagation();
+                                }
+                            </script>
+
+
+                            <a id="booleans-link" href="{{ url_for('views.booleans') }}"
+                                class="{% if current_page == 'booleans' %}active-nav{% endif %} nav-link">
+                                <li class='py-2 px-4 cursor-pointer'>Booleans</li>
+                            </a>
+                            <a id="operators-link" href="{{ url_for('views.operators') }}"
+                                class="{% if current_page == 'operators' %}active-nav{% endif %} nav-link">
+                                <li class='py-2 px-4 cursor-pointer'>Operators</li>
+                            </a>
+                            <!-- <li class='py-2 px-4 cursor-pointer flex' onclick="toggleDropdown()">
+                                <div>Lists</div>
+                                <div class="flex ml-auto">
+                                    <svg id="arrowIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+                                    </svg>
+                                </div>
+                            </li> -->
+
+
+                            <a id="ifelse-link" href="{{ url_for('views.ifelse') }}"
+                                class="{% if current_page == 'ifelse' %}active-nav{% endif %} nav-link">
+                                <li class='py-2 px-4 cursor-pointer'>If...Else</li>
+                            </a>
+                            <a id="whileloops-link" href="{{ url_for('views.whileloops') }}"
+                                class="{% if current_page == 'whileloops' %}active-nav{% endif %} nav-link">
+                                <li class='py-2 px-4 cursor-pointer'>While Loops</li>
+                            </a>
+                            <a id="forloops-link" href="{{ url_for('views.forloops') }}"
+                                class="{% if current_page == 'forloops' %}active-nav{% endif %} nav-link">
+                                <li class='py-2 px-4 cursor-pointer'>For Loops</li>
+                            </a>
+                            <a id="functions-link" href="{{ url_for('views.functions') }}"
+                                class="{% if current_page == 'functions' %}active-nav{% endif %} nav-link">
+                                <li class='py-2 px-4 cursor-pointer'>Functions</li>
+                            </a>
+                            <a id="functions-link" href="{{ url_for('views.lambdas') }}"
+                                class="{% if current_page == 'lambdas' %}active-nav{% endif %} nav-link">
+                                <li class='py-2 px-4 cursor-pointer'>Lambda</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-7 flex">
+                <div class="{% if session['sidebar_state'] == 'collapsed' %} w-full {% else %} w-4/6 {% endif %} {% if current_page == 'home' %}w-full{% endif %} d-block"
+                    id="mainContent">
+                    <main class="">
+                        {% block content %}{% endblock %}
+                    </main>
+                </div>
+                <div class="{% if session['sidebar_state'] == 'collapsed' %} closeTab {% else %} w-2/6 {% endif %} sticky top-0 h-screen bg-gray-100 right-0 {% if current_page == 'home' %}d-none{% else %} d-block{% endif %}"
+                    id="chatBotBox" style="transition: width 0.4s ease-in-out;">
+
+                    <div class="{% if session['sidebar_state'] == 'collapsed' %} d-block {% else %} d-none {% endif %} flex h-full py-2"
+                        id="empty">
+                        <div class="flex justify-center rounded-lg h-full bg-gray-100 p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" id="openChat"
+                                fill="currentColor" class="bi bi-arrow-left cursor-pointer" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div id="notempty"
+                        class="{% if session['sidebar_state'] == 'collapsed' %} d-none {% else %} d-block {% endif %} flex flex-col h-screen">
+                        <div class="flex flex-col h-screen">
+                            <div class="w-full h-16 p-2 flex items-center bg-slate-300 grid grid-cols-5">
+                                <div class="col-span-1 justify-center flex item-center">
+                                    <svg id="minimizeChat" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                        fill="currentColor" class="bi bi-x minimize-icon cursor-pointer"
+                                        viewBox=" 0 0 16 16">
+                                        <path
+                                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                                    </svg>
+                                </div>
+                                <div class="col-span-3 justify-center flex item-center">
+                                    <span class="text-3xl">AI Chat</span>
+                                </div>
+                                <div class="col-span-1 justify-center flex item-center">
+                                    <svg id="fullScreen" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-arrows-fullscreen cursor-pointer"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707m0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707m-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-grow overflow-y-auto" id="scrollChatBox">
+                                <!-- Chat messages -->
+                                <div class="flex flex-col mb-4 gap-4 p-4" id="chatMessage">
+                                    <div class="text-center default-message">Ask me questions</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-center items-center p-2 bg-slate-200 h-16">
+                                <input type="text" id="msg-input"
+                                    class="border border-gray-300 rounded-lg py-2 px-4 w-full max-w-lg mr-4"
+                                    placeholder="Type a message...">
+                                <button onclick="validateMessage()"
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var isButtonAva = true;
+        // Add event listener to the close button
+        document.getElementById('minimizeChat').addEventListener('click', toggleSidebar);
+
+        // Add event listener to the open button
+        document.getElementById('openChat').addEventListener('click', toggleSidebar);
+
+        document.getElementById('fullScreen').addEventListener('click', toggleFullscreen);
+
+        var msgInput = document.getElementById('msg-input');
+
+        msgInput.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                if (event.shiftKey) {
+                    event.preventDefault(); // Prevent default Enter behavior
+                    // Implement your Shift+Enter logic here (e.g., insert newline)
+                    msgInput.value += '\n';
+                } else {
+                    validateMessage();
+                }
+            }
+        });
+
+
+
+
+        const CHAT_LOG_KEY = 'chat_log';
+
+        var isProcessingMessage = false;
+        function validateMessage() {
+            var messageInput = document.getElementById('msg-input');
+            var message = messageInput.value.trim();
+            if (message !== '' && isButtonAva) {
+                if (!isProcessingMessage) {
+                    isProcessingMessage = true;
+                    isButtonAva = false;
+                    displayMessage(message, 'sender');  // Display user's message in the chat log
+                    sendMessage('Reply to the following with simple terms as a python programming professional to kid learners: """' + message + '"""');
+                    console.log("chatInput: " + message);
+                }
+                isProcessingMessage = false;
+            }
+        }
+
+        async function sendMessage(message) {
+            checkIfChatEmpty();
+            var messageInput = document.getElementById('msg-input');
+            displayTypingText();
+            messageInput.value = '';
+            try {
+                var reply = await sendToServer(message);
+                console.log("response: " + reply);
+                displayMessage(reply, "bot");
+            } catch (error) {
+                console.error("response: " + error);
+            }
+        }
+
+        async function sendToServer(message) {
+            return new Promise((resolve, reject) => {
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/askVertex', true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            var response = JSON.parse(xhr.responseText);
+                            resolve(response.reply);
+                        } else {
+                            reject('Error: ' + xhr.status);
+                        }
+                    }
+                };
+                xhr.send(JSON.stringify({ message: message }));
+            });
+        }
+
+        function displayTypingText() {
+            var chatLog = document.getElementById('chatMessage');
+            newDivHTML = `<div class="flex justify-start" id='typingTextBox'>
+                                <div class="flex mr-4">
+                                    <div
+                                        class="relative w-12 h-12 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                        <dotlottie-player
+                                            src="https://lottie.host/60d9447c-7cf6-4366-89ec-19bb21260028/mnh7ADz44h.json"
+                                            background="transparent" speed="1" direction="1" playMode="normal"
+                                            loop autoplay></dotlottie-player>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-200 rounded-lg px-4 py-2 flex">
+                                    <div class="justify-around flex items-center gap-0.5">
+                                        <div class="jump1"></div>
+                                        <div class="jump2"></div>
+                                        <div class="jump3"></div>
+                                        <div class="jump4"></div>
+                                        <div class="jump5"></div>
+                                    </div>
+                                </div>
+                            </div>`;
+            chatLog.innerHTML += newDivHTML;
+        }
+
+        function typingEffect(element, text, i = 0) {
+            element.innerHTML = text;
+        }
+
+        function checkIfChatEmpty() {
+            var chatLog = document.getElementById('chatMessage');
+            var defaultMessage = chatLog.querySelector('.default-message');
+            if (defaultMessage) {
+                defaultMessage.remove();
+            }
+        }
+
+        function sendChat(message) {
+            // toggleSidebar();
+            if (document.getElementById('mainContent').classList.contains('w-full')) {
+                toggleSidebar();
+            }
+            sendMessage(message);
+        }
+
+        function displayMessage(message, type) {
+            var chatLog = document.getElementById('chatMessage');
+
+            var newDivHTML = '';
+            if (type == 'sender') {
+                newDivHTML = `<div class="flex justify-end">
+                            <div class="bg-blue-500 rounded-lg px-4 py-2 max-w-[80%]">
+                                <p class="text-white text-md">`+ message + `</p>
+                            </div>
+                            <div class="flex ml-4">
+                                <div
+                                    class="relative w-12 h-12 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                    <dotlottie-player src="https://lottie.host/97fcdce0-163e-4a15-8999-e9e44d5ec87a/Ar7U6y3hVT.json" background="transparent" speed="0.5" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+                                </div>
+                            </div>
+                        </div>`;
+                chatLog.innerHTML += newDivHTML;
+                document.getElementById('scrollChatBox').scrollTop = chatLog.scrollHeight;
+            } else {
+                var typingBox = document.getElementById('typingTextBox');
+                if (typingBox) {
+                    typingBox.remove();
+                }
+
+                var parsedMessage = parseBotMessage(message);
+                newDivHTML = `
+                    <div class="flex justify-start">
+                        <div class="flex mr-4">
+                            <div class="relative w-12 h-12 overflow-hidden bg-gray-200 rounded-full dark:bg-gray-600">
+                                <dotlottie-player src="https://lottie.host/60d9447c-7cf6-4366-89ec-19bb21260028/mnh7ADz44h.json" background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+                            </div>
+                        </div>
+                        <div class="bg-gray-200 rounded-lg px-4 py-2 max-w-[80%]">
+                            <pre>${parsedMessage}</pre>
+                        </div>
+                    </div>`;
+
+                chatLog.innerHTML += newDivHTML;
+                document.getElementById('scrollChatBox').scrollTop = chatLog.scrollHeight;
+                isButtonAva = true;
+            }
+
+            // Update local storage with chat log
+            updateChatLogLocalStorage();
+        }
+
+
+        function updateChatLogLocalStorage() {
+            var chatLog = document.getElementById('chatMessage').innerHTML;
+            localStorage.setItem(CHAT_LOG_KEY, chatLog);
+        }
+
+        function loadChatLogFromLocalStorage() {
+            var chatLog = localStorage.getItem(CHAT_LOG_KEY);
+            if (chatLog) {
+                document.getElementById('chatMessage').innerHTML = chatLog;
+            }
+        }
+
+        function parseBotMessage(message) {
+            var lines = message.split("\n");
+            var parsedMessage = '';
+
+            lines.forEach(function (line) {
+                if (line.trim().startsWith("*")) {
+                    parsedMessage += `${line.trim().replace(/\*/g, '')}\n`;
+                } else if (line.trim().startsWith("-")) {
+                    parsedMessage += `  - ${line.trim().replace(/^-+/, '')}\n`;
+                } else {
+                    parsedMessage += `${line.trim()}\n`;
+                }
+            });
+
+            return parsedMessage;
+        }
+
+        loadChatLogFromLocalStorage();
+
+    </script>
+</body>
+
+</html>

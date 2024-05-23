@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Variables Names{% endblock %}
+
+{% block content %}
+
+<div class="header space-y-3 py-4 px-5">
+    <p class="text-4xl font-bold">Variable Names</p>
+    <div style="margin-bottom: 0%;">
+        <a href="{{ url_for('views.variables') }}" class="button-link ">
+            <button class="btn btn-primary">Previous</button>
+        </a>
+        <a href="{{ url_for('views.assignMultipleValues') }}" class="button-link btn-primary float-right">
+            <button class="btn btn-primary">Next</button>
+        </a>
+    </div>
+</div>
+<div class="px-12 pb-4">
+    <hr class="my-4">
+    <div class="content-1 space-y-3">
+        <div class="content title">
+            <div class="text-3xl">Variable Naming
+            </div><br>
+            A variable may feature a concise designation (such as x and y) or a more elaborate identifier (e.g., age,
+            car_name, total_volume). Guidelines for Python variables:
+        </div>
+
+        <ul class="list-disc ml-4">
+            <li>The name of a variable must start with a letter or an underscore character</li>
+            <li>A variable's name cannot start with a number</li>
+            <li>A variable's name can only contain alphanumeric characters and underscores (A-z, 0-9, and _ )</li>
+            <li>Variable names are case-sensitive (age, Age, and AGE are different variables)</li>
+            <li>A variable's name cannot be one of Python's reserved keywords.</li>
+        </ul>
+    </div>
+    <hr class="my-4">
+    <div class="content-1 space-y-3">
+        <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="text-sm">Legal variable names:
+
+            </div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div>myvar = <span class="text-red-600">"Ian"</span></div>
+                <div>my_var = <span class="text-red-600">"Ian"</span></div>
+                <div>_my_var = <span class="text-red-600">"Ian"</span></div>
+                <div>myVar = <span class="text-red-600">"Ian"</span></div>
+                <div>MYVAR = <span class="text-red-600">"Ian"</span></div>
+                <div>myvar2 = <span class="text-red-600">"Ian"</span></div>
+
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+
+        <div class="rounded-lg bg-red-200 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="text-sm mb-2">Illegal variable names:
+
+            </div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div>2myvar = <span class="text-red-600">"Ian"</span></div>
+                <div>my-var = <span class="text-red-600">"Ian"</span></div>
+                <div>my var = <span class="text-red-600">"Ian"</span></div>
+
+                <div class="absolute top-0 left-0 bg-red-600 p-0.5 h-full"></div>
+            </div>
+        </div>
+        <div style="background-color: #FFFACD; padding: 26px; border-radius: 5px;">
+            <b>Note:</b> Remember that variable names are case-sensitive
+
+
+        </div>
+        <hr class="my-4">
+        <div class="content-1 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Multi-word Variable Names</div><br>
+                <p>Variable names containing multiple words can pose readability challenges.</p>
+                <p>There are several approaches you can employ to enhance their readability:</p>
+            </div>
+            <div class="text-3xl">Camel Case</div>
+            <p>Each word, except the first, begins with a capital letter:</p>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div>myVariableName = <span class="text-red-600">"Ian"</span></div>
+
+            </div>
+            <hr class="my-4">
+            <div class="text-3xl">Pascal Case </div>
+            <p>Each word starts with a capital letter:</p>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div>MyVariableName = <span class="text-red-600">"Ian"</span></div>
+
+            </div>
+
+            <hr class="my-4">
+            <div class="text-3xl">Snake Case </div>
+            <p>Each word is delimited by an underscore character:
+
+            </p>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div>my_variable_name = <span class="text-red-600">"Ian"</span></div>
+            </div>
+            <div style="margin-bottom: 0%;">
+                <a href="{{ url_for('views.variables') }}" class="button-link ">
+                    <button class="btn btn-primary">Previous</button>
+                </a>
+                <a href="{{ url_for('views.assignMultipleValues') }}" class="button-link btn-primary float-right">
+                    <button class="btn btn-primary">Next</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

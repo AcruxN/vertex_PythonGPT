@@ -1,0 +1,309 @@
+{% extends "base.html" %}
+
+{% block title %}Data Types{% endblock %}
+
+{% block content %}
+<style>
+    td {
+        padding: 8px;
+    }
+
+    .border-table-datatype tr:nth-child(even) {
+        background-color: #E7E9EB;
+    }
+
+    .border-table {
+        margin: 20px 0;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        display: table;
+    }
+
+    .border-table-datatype th,
+    .border-table-datatype td {
+        padding: 8px 8px;
+        display: table-cell;
+        text-align: left;
+        vertical-align: top;
+        padding-left: 16px;
+    }
+</style>
+<div class="">
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python Data Types</p>
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.outputVariables') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.numbers') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-4">
+        <div class="content-1 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Built-in Data Types</div><br>
+                <p>Data types are crucial concepts in programming.</p>
+                <p>Variables have the capability to store data of varying types, each type enabling different
+                    functionalities.</p>
+                <p>Python includes the following built-in data types by default, categorized as follows:</p>
+            </div>
+            <table class="">
+                <tr>
+                    <td style="width:160px;">Text Type:</td>
+                    <td><code class="p-data">str</code></td>
+                </tr>
+                <tr>
+                    <td>Numeric Types:</td>
+                    <td><code class="p-data">int</code>, <code class="p-data">float</code>,
+                        <code class="p-data">complex</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sequence Types:</td>
+                    <td><code class="p-data">list</code>, <code class="p-data">tuple</code>,
+                        <code class="p-data">range</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mapping Type:</td>
+                    <td><code class="p-data">dict</code></td>
+                </tr>
+                <tr>
+                    <td>Set Types:</td>
+                    <td><code class="p-data">set</code>, <code class="p-data">frozenset</code></td>
+                </tr>
+                <tr>
+                    <td>Boolean Type:</td>
+                    <td><code class="p-data">bool</code></td>
+                </tr>
+                <tr>
+                    <td>Binary Types:</td>
+                    <td><code class="p-data">bytes</code>, <code class="p-data">bytearray</code>,
+                        <code class="p-data">memoryview</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>None Type:</td>
+                    <td><code class="p-data">NoneType</code></td>
+                </tr>
+            </table>
+        </div>
+        <hr class="my-4">
+        <div class="content-2 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Getting The Data Type</div><br>
+                <div class="space-y-2">
+                    <p>To retrieve the data type of any object, you can utilize the <span
+                            class="p-data text-red-600">type()</span> function.</p>
+                </div>
+            </div>
+            <div class=" rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-md mb-3">Display the data type of variable x:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div class="text-red-600"><span class="text-black">x = </span>5</div>
+                    <div class="text-blue-600">print<span class="text-black">&#40;</span>type<span
+                            class="text-black">&#40;x&#41;&#41;</span></div>
+
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="content-2 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Setting the Data Type</div><br>
+                <div class="space-y-2">
+                    <p>In Python, the data type is determined when you assign a value to a variable.</p>
+                </div>
+            </div>
+            <table class="border-table border-table-datatype">
+                <tr>
+                    <th style="min-width:350px">Example</th>
+                    <th>Data Type</th>
+                </tr>
+                <tr>
+                    <td>x = &quot;Hello World&quot;</td>
+                    <td>str</td>
+
+                </tr>
+                <tr>
+                    <td>x = 220</td>
+                    <td>int</td>
+
+                </tr>
+                <tr>
+                    <td>x = 312.5</td>
+                    <td>float</td>
+
+                </tr>
+                <tr>
+                    <td>x = 1j</td>
+                    <td>complex</td>
+
+                </tr>
+                <tr>
+                    <td>x = [&quot;A&quot;, &quot;B&quot;, &quot;D&quot;]</td>
+                    <td>list</td>
+
+                </tr>
+                <tr>
+                    <td>x = (&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)</td>
+                    <td>tuple</td>
+
+                </tr>
+                <tr>
+                    <td>x = range(10)</td>
+                    <td>range</td>
+
+                </tr>
+                <tr>
+                    <td>x = {&quot;Name&quot; : &quot;Ian&quot;, &quot;Age&quot; : 21}</td>
+                    <td>dict</td>
+
+                </tr>
+                <tr>
+                    <td>x = {&quot;A&quot;, &quot;B&quot;, &quot;C&quot;}</td>
+                    <td>set</td>
+
+                </tr>
+                <tr>
+                    <td>x = frozenset({&quot;A&quot;, &quot;B&quot;, &quot;C&quot;})</td>
+                    <td>frozenset</td>
+
+                </tr>
+                <tr>
+                    <td>x = False</td>
+                    <td>bool</td>
+
+                </tr>
+                <tr>
+                    <td>x = b&quot;Hello&quot;</td>
+                    <td>bytes</td>
+
+                </tr>
+                <tr>
+                    <td>x = bytearray(5)</td>
+                    <td>bytearray</td>
+
+                </tr>
+                <tr>
+                    <td>x = memoryview(bytes(5))</td>
+                    <td>memoryview</td>
+
+                </tr>
+                <tr>
+                    <td>x = None</td>
+                    <td>NoneType</td>
+
+                </tr>
+            </table>
+        </div>
+        <hr class="my-4">
+        <div class="content-2 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Setting the Specific Data Type</div><br>
+                <div class="space-y-2">
+                    <p>If you wish to specify the data type, you can employ the following constructor functions:</p>
+                </div>
+            </div>
+            <table class="border-table border-table-datatype">
+                <tr>
+                    <th style="min-width:350px">Example</th>
+                    <th>Data Type</th>
+
+                </tr>
+                <tr>
+                    <td>x = str(&quot;Hello World&quot;)</td>
+                    <td>str</td>
+
+                </tr>
+                <tr>
+                    <td>x = int(220)</td>
+                    <td>int</td>
+
+                </tr>
+                <tr>
+                    <td>x = float(212.5)</td>
+                    <td>float</td>
+
+                </tr>
+                <tr>
+                    <td>x = complex(1j)</td>
+                    <td>complex</td>
+
+                </tr>
+                <tr>
+                    <td>x = list((&quot;A&quot;, &quot;B&quot;, &quot;C&quot;))</td>
+                    <td>list</td>
+                </tr>
+                <tr>
+                    <td>x = tuple((&quot;A&quot;, &quot;B&quot;, &quot;C&quot;))</td>
+                    <td>tuple</td>
+                </tr>
+                <tr>
+                    <td>x = range(6)</td>
+                    <td>range</td>
+                </tr>
+                <tr>
+                    <td>x = dict(name=&quot;Ian&quot;, Age=36)</td>
+                    <td>dict</td>
+                </tr>
+                <tr>
+                    <td>x = set((&quot;A&quot;, &quot;B&quot;, &quot;C&quot;))</td>
+                    <td>set</td>
+                </tr>
+                <tr>
+                    <td>x = frozenset((&quot;A&quot;, &quot;B&quot;, &quot;C&quot;))</td>
+                    <td>frozenset</td>
+                </tr>
+                <tr>
+                    <td>x = bool(5)</td>
+                    <td>bool</td>
+                </tr>
+                <tr>
+                    <td>x = bytes(5)</td>
+                    <td>bytes</td>
+                </tr>
+                <tr>
+                    <td>x = bytearray(5)</td>
+                    <td>bytearray</td>
+                </tr>
+                <tr>
+                    <td>x = memoryview(bytes(5))</td>
+                    <td>memoryview</td>
+                </tr>
+            </table>
+            <div style="margin-bottom: 0%;">
+                <a href="{{ url_for('views.outputVariables') }}" class="button-link ">
+                    <button class="btn btn-primary">Previous</button>
+                </a>
+                <a href="{{ url_for('views.numbers') }}" class="button-link btn-primary float-right">
+                    <button class="btn btn-primary">Next</button>
+                </a>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="content-2 space-y-3">
+            <h2 class="text-3xl">Think Yourself</h2>
+            <br>
+            <div class="content-3 space-y-3 rounded-lg bg-black p-4">
+                <h2 class="text-3xl text-white">What is the Data Type?</h2>
+                <div class="bg-white p-2 pl-3 flex flex-col relative">
+                    <div class="text-black">x = range&#40;1, 10&#41;</div>
+                    <div class="text-black"><span class="text-blue-600">print</span>&#40;type&#40;x&#41;&#41;</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+                <button type="button"
+                    onclick="sendChat(`explain the concept of this python code in short    x = range(1, 10)      print(type(x))`)"
+                    class="btn btn-success mt-3">I Don't Know?</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

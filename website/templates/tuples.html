@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Tuples{% endblock %}
+
+{% block content %}
+<!-- Writee our mian content here -->
+<div>
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python Tuples</p>
+        <!--<button type="button" class="btn btn-primary" onclick="redirectToPrevious()">Previous</button>
+        <button type="button" class="btn btn-primary float-right" onclick="redirectToNext()">Next</button>-->
+        <div style="margin-bottom: 0%;">
+            
+            <a href="{{ url_for('views.sets') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Chat Content -->
+{% endblock %}

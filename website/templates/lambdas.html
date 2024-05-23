@@ -1,0 +1,294 @@
+{% extends "base.html" %}
+
+{% block title %}Lambda{% endblock %}
+
+{% block content %}
+<style>
+    td {
+        padding: 8px;
+    }
+
+    .p-data {
+        background-color: rgba(222, 222, 222, 0.3);
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .border-table-datatype tr:nth-child(even) {
+        background-color: #E7E9EB;
+    }
+
+    .border-table {
+        margin: 20px 0;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        display: table;
+    }
+
+    .border-table-datatype th,
+    .border-table-datatype td {
+        padding: 8px 8px;
+        display: table-cell;
+        text-align: left;
+        vertical-align: top;
+        padding-left: 16px;
+    }
+</style>
+<div class="">
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python Lambda 𓆏</p>
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.functions') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <!-- <a href="{{ url_for('views.functions') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a> -->
+        </div>
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-4">
+        <div class="content-1 space-y-3">
+            <div class="content title">
+
+                <style>
+                    p:first-of-type {
+                        margin-bottom: 20px;
+                    }
+                </style>
+                <p>A lambda function is a small anonymous function defined with the 'lambda' keyword.</p>
+                <p>A lambda function can have only one expression, but can can have any number of arguments. It normally
+                    restricted to a single line</p>
+                <br>
+                <hr>
+                <br>
+                <div class="text-3xl">Syntax</div>
+            </div>
+            <style>
+                .boxed {
+                    border: 1px solid black;
+                    padding: 10px;
+                    min-width: 300px;
+                }
+            </style>
+            <table class="boxed">
+                <tr>
+                    <td>lambda arguments : </td>
+                    <td><i><code class="p-data">expression</code></i></td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <div>
+                <br>
+                <p>The expression is executed and the result is returned:
+                </p>
+            </div>
+            <div class=" rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-md mb-3">For example, when the lambda expression is defined to add 30 to <span
+                        class="text-red-600">a</span>, after running below program and print the result, it will be 35
+                </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div><span class="text-black">x = <span class="text-blue-600">lambda</span> a : a +</span><span
+                            class="text-red-600"> 30</span></div>
+                    <div><span class="text-blue-600">print</span><span class="text-black">&#40;</span>x&#40;<span
+                            class="text-red-600">5</span>&#41;&#41;</div>
+
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+        </div><br>
+        <div class="content-2 space-y-3">
+            <div class="space-y-2">
+                <p>Lambda functions can take many arguments:
+                </p>
+            </div>
+            <div class=" rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-md mb-3">Multiple argument <span class="text-red-600">c</span> with argument <span
+                        class="text-red-600">d</span> will return the result 12 after assign 3 to c and 4 to b:
+                </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div><span class="text-black">x = <span class="text-blue-600">lambda</span> c, d : c * d</span>
+                    </div>
+                    <div><span class="text-blue-600">print</span><span class="text-black">&#40;</span>x&#40;
+                        <span class="text-red-600">3</span>, <span class="text-red-600">4</span>&#41;&#41;
+                    </div>
+
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <!--
+            <div class=" rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-md mb-3">Summarize argument <span class="text-red-600">a </span>, <span
+                        class="text-red-600">b</span> , and<span class="text-red-600"> c </span>and return the result:
+                </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div><span class="text-black">x = <span class="text-blue-600">lambda</span> a, b, c : a + b +
+                            c</span></div>
+                    <div><span class="text-blue-600">print</span><span class="text-black">&#40;</span>x&#40;
+                        <span class="text-red-600">5</span>, <span class="text-red-600">6</span>, <span
+                            class="text-red-600">2</span>&#41;&#41;
+                    </div>
+
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            -->
+        </div>
+        <hr class="my-4">
+        <div class="content-2 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">The Importance of Lambda Functions?
+                </div><br>
+                <div class="space-y-2">
+                    <p>The true strength of lambda functions becomes evident when they are used as anonymous functions
+                        within another function.</p>
+                    <p>For example, consider a function that takes one argument and multiplies it by an unspecified
+                        number:
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class=" rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div><span class="text-black"><span class="text-blue-600">def</span> myfunc(n):</span></div>
+                <div><span class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return lambda</span><span
+                        class="text-black"></span> c : c * n</div>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+
+        <br>
+        <p>The above function can make a function that always time with the number you set</p>
+
+        <div class=" rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div><span class="text-black"><span class="text-blue-600">def</span> myfunc(n):</span></div>
+                <div><span class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return lambda</span><span
+                        class="text-black"></span> c : c * n</div>
+                <br>
+                <div><span class="text-black">mytripler = myfunc&#40;<span class="text-red-600">3</span>&#41;</span>
+                </div>
+                <br>
+                <div><span class="text-blue-600">print</span><span class="text-black">&#40;</span>mytripler&#40;<span
+                        class="text-red-600">0</span>&#41;&#41;</div>
+
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+
+        <br>
+        <p> You can replace the <i>n </i> with any number to make it multiple with any number</p><br>
+        <!--
+        <div class=" rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div><span class="text-black"><span class="text-blue-600">def</span> myfunc(n):</span></div>
+                <div><span class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return lambda</span><span
+                        class="text-black"></span> a : a * n</div>
+                <br>
+                <div><span class="text-black">mytripler = myfunc&#40;<span class="text-red-600">3</span>&#41;</span>
+                </div>
+                <br>
+                <div><span class="text-blue-600">print</span><span class="text-black">&#40;</span>mytripler&#40;<span
+                        class="text-red-600">11</span>&#41;&#41;</div>
+
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+        -->
+        <br>
+        <p>Or, you can make two or more function in same program</p><br>
+
+        <div class=" rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div><span class="text-black"><span class="text-blue-600">def</span> myfunc(n):</span></div>
+                <div><span class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return lambda</span><span
+                        class="text-black"></span> a : a * n</div>
+                <br>
+                <div><span class="text-black">mydoubler = myfunc&#40;<span class="text-red-600">2</span>&#41;</span>
+                </div>
+                <div><span class="text-black">mytripler = myfunc&#40;<span class="text-red-600">3</span>&#41;</span>
+                </div>
+                <br>
+                <div><span class="text-blue-600">print</span><span class="text-black">&#40;</span>mydoubler&#40;<span
+                        class="text-red-600">33</span>&#41;&#41;</div>
+                <div><span class="text-blue-600">print</span><span class="text-black">&#40;</span>mytripler&#40;<span
+                        class="text-red-600">33</span>&#41;&#41;</div>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+        <br>
+
+        <div style="background-color: #FFFACD; padding: 26px; border-radius: 5px;">
+            ChatGPTUse lambda functions when you need a temporary anonymous function for a brief duration.
+        </div>
+        <br>
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.functions') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <!-- <a href="{{ url_for('views.functions') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a> -->
+        </div>
+        <style>
+            .exerciseprecontainer {
+                background-color: #f2f2f2;
+                /* Grey background color */
+                padding: 10px;
+                /* Add padding for spacing */
+            }
+        </style>
+        <br>
+        <div class="content-3 space-y-3 rounded-lg bg-black p-4">
+            <h2 class="text-3xl text-white">Guess the output of x, y, z</h2>
+            <div class="bg-white p-2 pl-3 flex flex-col relative">
+                <div>Create a lambda function that takes one parameter &#40;<code class="p-data">a</code>&#41; and
+                    returns it.</div>
+                <div>x = ____________ _____ _____ _____ </div>
+                <div class="text-green-600"># Fill in correct answer</div>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+            <input type="text" id="userAnswer"
+                class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your answer here">
+            <button type="button" onclick="submitAnswer()" class="btn btn-success mt-3">Submit</button>
+            <p id="exercise-feedback" class="text-red-600 mt-2"></p>
+        </div>
+
+        <script>
+
+
+            function submitAnswer() {
+                const userAnswer = document.getElementById('userAnswer').value;
+                const correctAnswer = "<class 'int'> <class 'float'> <class 'complex'>";
+                const feedbackElement = document.getElementById('exercise-feedback');
+
+                if (userAnswer.trim() === correctAnswer) {
+                    feedbackElement.innerHTML = "Correct!";
+                    feedbackElement.classList.remove('text-red-600');
+                    feedbackElement.classList.add('text-green-600');
+                } else {
+                    feedbackElement.innerHTML = "Incorrect. Try again!";
+                    feedbackElement.classList.remove('text-green-600');
+                    feedbackElement.classList.add('text-red-600');
+                    const message = `Create a lambda function that takes one parameter (a) and returns it. `;
+                    sendChat(message);
+                }
+            }
+        </script>
+
+
+    </div>
+</div>
+{% endblock %}

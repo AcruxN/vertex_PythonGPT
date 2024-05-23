@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block title %}Comments{% endblock %}
+
+{% block content %}
+
+<!-- Writee our mian content here -->
+<div class="">
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python Comments</p>
+
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.syntax') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.variables') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-4">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="flex-col justify-center items-center">
+                    <p>Comments serve to elucidate Python code.</p>
+                    <p>Comments enhance code readability.</p>
+                    <p>Comments can also halt execution during code testing.</p>
+                </div>
+            </div>
+            <div class=" col-lg-5 justify-center item-center">
+                <dotlottie-player class="animate__bounceIn animate__animated"
+                    src="https://lottie.host/7a67ce69-a87d-408a-b707-d0e1cdbaa3f7/fsxTlM4f73.json"
+                    background="transparent" speed="1" style="width: 180px; height: 180px" direction="1"
+                    playMode="normal" loop autoplay></dotlottie-player>
+            </div>
+        </div>
+
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-3">
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Creating a Comment</div><br>
+                <div class="space-y-2">
+                    <p>Python supports commenting for in-code documentation.</p>
+                    <p>Comments in Python begin with a #, and the rest of the line is considered as a comment.</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm">Comments in Python: </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div class="text-green-600">#This is a comment.</div>
+                    <div><span class="text-blue-600">print</span><span class="text-red-600"> ("Yo,
+                            Dude!")</span>
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <p class="pl-3">A comment doesn't necessarily have to explain the code; it can also prevent Python from
+                executing certain lines:</p>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm">Comments in Python: </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div class="text-green-600">#print("Yo, Dude!")</div>
+                    <div><span class="text-blue-600">print</span><span class="text-red-600"> ("Yo!,Dude!")</span>
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Multiline Comments-->
+    <div class="px-12 pb-4">
+        <hr class="my-3">
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Multiline Comments</div><br>
+                <div class="space-y-2">
+                    <p>Python lacks a specific syntax for multiline comments.</p>
+                    <p>To create a multiline comment, you can prefix each line with a #:</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm">Comments in Python: </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div class="text-green-600">#This is a comment</div>
+                    <div class="text-green-600">#written in</div>
+                    <div class="text-green-600">#more than just one line</div>
+                    <div><span class="text-blue-600">print</span><span class="text-red-600"> ("Yo,
+                            Dude!")</span>
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <p>Alternatively, though not the intended use, you can employ a multiline string.</p>
+                <p>Given that Python disregards string literals not assigned to a variable, you can incorporate a
+                    multiline string (enclosed in triple quotes) in your code and embed your comment within it:</p>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm">Comments in Python: </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div class="text-green-600">#print("Yo, Dude!")</div>
+                    <div><span class="text-blue-600">print</span><span class="text-red-600"> ("Yo!,
+                            Dude!")</span>
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <div style="margin-bottom: 0%;">
+                <a href="{{ url_for('views.syntax') }}" class="button-link ">
+                    <button class="btn btn-primary">Previous</button>
+                </a>
+                <a href="{{ url_for('views.variables') }}" class="button-link btn-primary float-right">
+                    <button class="btn btn-primary">Next</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-3">
+        <h2 class="text-3xl">Think Yourself</h2>
+        <br>
+        <div class="content-3 space-y-3 rounded-lg bg-black p-4">
+            <h2 class="text-3xl text-white">Do you think this is a comments?</h2>
+            <div class="bg-white p-2 pl-3 flex flex-col relative">
+                <div class="text-green-600">'''</div>
+                <div class="text-green-600">This is a comment</div>
+                <div class="text-green-600">This is another line of comment</div>
+                <div class="text-green-600">This is last line of comment</div>
+                <div class="text-green-600">'''</div>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+            <button type="button"
+                onclick="sendChat(`'''This is a comment  This is another line of comment   This is last line of comment'''   do you think this is a type of comment in python? explain in short`)"
+                class="btn btn-success mt-3">I Don't Know?</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

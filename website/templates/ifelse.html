@@ -1,0 +1,484 @@
+{% extends "base.html" %}
+
+{% block title %}If Else{% endblock %}
+
+{% block content %}
+<!-- Writee our mian content here -->
+<div>
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python If...Else</p>
+
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.operators') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.whileloops') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-3">
+        <!-- python condtions and if statement-->
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Python Conditions and If statements</div><br>
+                <div class="space-y-2">
+                    <p>There are six type of common logical conditions from mathematics:</p>
+                    <ul class="list-disc  ml-6">
+                        <li>Equals: <code class="p-data">a == b</code></li>
+                        <li>Not Equals: <code class="p-data">a != b</code></li>
+                        <li>Less than: <code class="p-data">a &lt; b</code></li>
+                        <li>Less than or equal to: <code class="p-data">a &lt;= b</code></li>
+                        <li>Greater than: <code class="p-data">a &gt; b</code></li>
+                        <li>Greater than or equal to: <code class="p-data">a &gt;= b</code></li>
+                    </ul><br>
+                    <p>These conditions most commonly in "if statements" and loops.</p><br>
+                    <p>An "if statement" is written by using the if keyword.</p>
+                </div>
+            </div><br>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm">If statement:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>a = <span class="text-red-600">34</span>
+                    </div>
+                    <div>b = <span class="text-red-600">102</span>
+                    </div>
+                    <div><span class="text-blue-600">if </span>b &gt; a:
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">print</span>(<span style="color:brown;">"b is greater than
+                            a"</span>)
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div><br>
+            <div class="content title">
+                <div class="space-y-2">
+                    <p>In this example, we use two variables, <span class="text-red-600">a</span> and <span
+                            class="text-red-600">b</span>, to test if <span class="text-red-600">b</span> is greater
+                        than <span class="text-red-600">a</span>. Since <span class="text-red-600">a</span> is <span
+                            class="text-red-600">33</span> and <span class="text-red-600">b</span> is <span
+                            class="text-red-600">200</span>, we print "b is greater than a" because 200 is indeed
+                        greater than 33.</p>
+                </div>
+            </div>
+
+            <!--Indentation-->
+
+        </div>
+        <hr class="my-4">
+
+        <!--Else if-->
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Elif</div><br>
+                <div class="space-y-2">
+                    <p>The <span class="text-red-600 bg-gray-200">elif</span> keyword to set another condition if
+                        previous condition is no true.</p><br>
+                    <p>If commonly use in "if statements" and loops.</p>
+                </div>
+            </div><br>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>a = <span class="text-red-600">44</span>
+                    </div>
+                    <div>b = <span class="text-red-600">44</span>
+                    </div>
+                    <div><span class="text-blue-600">if </span>b &gt; a:
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">print</span>(<span style="color:brown;">"b is greater than
+                            a"</span>)
+                    </div>
+                    <div><span class="text-blue-600">elif </span>a == b:
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">print</span>(<span style="color:brown;">"a and b are equal"</span>)
+                    </div><br>
+
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+
+            </div><br>
+            <p>In this example , the first condition is not true, but the second condition, the<span
+                    class="text-red-600 bg-gray-200">elif</span> block is
+                true, so it will print that "a and b are equal".</p>
+            <hr class="my-4">
+        </div>
+
+        <!--Else-->
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Else</div><br>
+                <div class="space-y-2">
+                    <p>If every condition if false, the <span class="text-red-600 bg-gray-200">else</span> keyword will
+                        function</p><br>
+                </div>
+            </div><br>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>a = <span class="text-red-600">300</span>
+                    </div>
+                    <div>b = <span class="text-red-600">44</span>
+                    </div>
+                    <div><span class="text-blue-600">if </span>b &gt; a:
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">print</span>(<span style="color:brown;">"b is greater than
+                            a"</span>)
+                    </div>
+                    <div><span class="text-blue-600">elif </span>a == b:
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">print</span>(<span style="color:brown;">"a and b are equal"</span>)
+                    </div>
+                    <div><span class="text-blue-600">else </span>:
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">print</span>(<span style="color:brown;">"a is greater than
+                            b"</span>)
+                    </div><br>
+
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+
+            </div><br>
+            <p>I
+                ChatGPT
+                In this example, <span class="text-red-600 bg-gray-200">a</span> is greater than <span
+                    class="text-red-600 bg-gray-200">b</span>, so the first condition and the <span
+                    class="text-red-600 bg-gray-200">elif</span> condition are both false. Thus, we proceed to the <span
+                    class="text-red-600 bg-gray-200">else</span> block and print "a is greater than b"..</p><br>
+            <p>You can also have an <span class="text-red-600 bg-gray-200">else</span> without the <span
+                    class="text-red-600 bg-gray-200">elif</span>:</p><br>
+
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>a = <span class="text-red-600">200</span>
+                    </div>
+                    <div>b = <span class="text-red-600">33</span>
+                    </div>
+                    <div><span class="text-blue-600">if </span>b &gt; a:
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">print</span>(<span style="color:brown;">"b is greater than
+                            a"</span>)
+                    </div>
+                    <div><span class="text-blue-600">else </span>:
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-blue-600">print</span>(<span style="color:brown;">"b is not greater than
+                            a"</span>)
+                    </div><br>
+
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+
+            </div><br>
+            <hr class="my-4">
+        </div>
+
+        <!--Short hand if-->
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Short Hand If</div><br>
+                <div class="space-y-2">
+                    <p>Short hand if is one line command that for only one statement to execute.
+                    </p>
+                </div>
+            </div><br>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div><span class="text-blue-600">if</span> a > b: <span class="text-blue-600">print</span>
+                        (<span class="text-red-600">"a is greater than b"</span>)
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div><br>
+            <hr class="my-4">
+        </div>
+
+        <!--Short hand if ... Else-->
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Short Hand If</div><br>
+                <div class="space-y-2">
+                    <p>You can also add else statement in short hand if:
+                    </p>
+                </div>
+            </div><br>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div><span class="text-blue-600">print</span>(<span class="text-red-600">"A"</span><span
+                            class="text-blue-600">if</span>a > b: <span class="text-blue-600">else print</span>
+                        (<span class="text-red-600">"B"</span>)
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div><br>
+            <div class="space-y-2 bg-amber-100 py-4 px-4">
+                <p>You can also have multiple else statements on the same line:
+                </p>
+            </div><br>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div>
+                    <p>One line if else statement, with 3 conditions:</p>
+                </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div><span class="text-blue-600">print</span>(<span class="text-red-600">"A"</span>) <span
+                            class="text-blue-600">if</span>a > b: <span class="text-blue-600">else print</span>
+                        (<span class="text-red-600">"="</span>) <span class="text-blue-600">if</span>a == b: <span
+                            class="text-blue-600">else print</span>
+                        (<span class="text-red-600">"B"</span>)
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div><br>
+            <hr class="my-4">
+        </div>
+
+        <!--And -->
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">And</div><br>
+                <div class="space-y-2">
+                    <p>The <span class="text-red-600 bg-gray-200">and</span> keyword is a logical operator, it combine
+                        the condition and return true if both of them are correct:
+                    </p>
+                </div>
+            </div><br>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div>Test if a is greater than b, AND if c is greater than a:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>a = <span class="text-red-600">300</span></div>
+                    <div>b = <span class="text-red-600">22</span></div>
+                    <div>c = <span class="text-red-600">400</span></div>
+                    <div><span class="text-blue-600">if </span>a > b and c > a: </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">print</span> ( <span
+                            class="text-red-600">"Both conditions are True"</span>)</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div><br>
+            <hr class="my-4">
+        </div>
+
+        <!--Or -->
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Or</div><br>
+                <div class="space-y-2">
+                    <p>The <span class="text-red-600 bg-gray-200">and</span> keyword is a logical operator, and return
+                        False while two of the condition is false, otherwise it will return True:
+                    </p>
+                </div>
+            </div><br>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div>Test if a is greater than b, OR if c is greater than a:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>a = <span class="text-red-600">300</span></div>
+                    <div>b = <span class="text-red-600">22</span></div>
+                    <div>c = <span class="text-red-600">400</span></div>
+                    <div><span class="text-blue-600">if </span>a > b or c > a: </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">print</span> ( <span
+                            class="text-red-600">"At least one of the conditions is True"</span>)</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div><br>
+            <hr class="my-4">
+        </div>
+
+        <!--Not -->
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Not</div><br>
+                <div class="space-y-2">
+                    <p>The <span class="text-red-600 bg-gray-200">not </span> keyword is a logical operator, that used
+                        to reverse the result:
+                    </p>
+                </div>
+            </div><br>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div>Test if a is NOT greater than b:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>a = <span class="text-red-600">300</span></div>
+                    <div>b = <span class="text-red-600">22</span></div>
+                    <div><span class="text-blue-600">if </span>not a > b: </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">print</span> ( <span
+                            class="text-red-600">"a is NOT greater than b"</span>)</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div><br>
+            <hr class="my-4">
+        </div>
+
+        <!--Nested If -->
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Nested If</div><br>
+                <div class="space-y-2">
+                    <p>You can have <span class="text-red-600 bg-gray-200">if </span> statements inside <span
+                            class="text-red-600 bg-gray-200">if </span> statements, this is called nested<span
+                            class="text-red-600 bg-gray-200"> if </span>
+                        statements.</p>
+                </div>
+            </div><br>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>a = <span class="text-red-600">300</span></div>
+                    <div><span class="text-blue-600">if </span>x > <span class="text-red-600"> 10</span>: </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">print</span> ( <span
+                            class="text-red-600">"Above ten, "</span>)</div>
+                    <div><span class="text-blue-600">&nbsp;&nbsp;&nbsp;&nbsp;if </span>x > <span class="text-red-600">
+                            10</span>: </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">print</span> (
+                        <span class="text-red-600">"and also above 20! "</span>)
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;else</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">print</span> (
+                        <span class="text-red-600">"but not above 20."</span>)
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div><br>
+            <hr class="my-4">
+        </div>
+
+        <!--The pass Statement -->
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">The pass Statement</div><br>
+                <div class="space-y-2">
+                    <p><span class="text-red-600 bg-gray-200">if</span> statements cannot be left empty. If you need to
+                        have an <span class="text-red-600 bg-gray-200">if</span> statement with no code inside, use the
+                        <span class="text-red-600 bg-gray-200">pass</span> statement to prevent errors.
+                    </p>
+                </div>
+            </div><br>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>a = <span class="text-red-600">300</span></div>
+                    <div>b = <span class="text-red-600">44</span></div>
+                    <div><span class="text-blue-600">if </span> b > a: </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">pass</span> </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div><br>
+
+        </div>
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.operators') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.whileloops') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+        <hr class="my-3">
+        <h2 class="text-3xl">Exercise</h2>
+        <br>
+        <div class="content-4 space-y-3 rounded-lg bg-black p-4">
+            <h2 class="text-3xl text-white">If-Else in Python</h2>
+            <div class="bg-white p-2 pl-3 flex flex-col relative">
+                <p>Which of the following code snippets correctly checks if a number is even or odd?</p>
+                <p>Choose the correct option:</p>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <pre>
+        a) 
+        num = 5
+        if num % 2 == 0:
+            print("Even")
+        else:
+            print("Odd")
+        
+        b) 
+        num = 5
+        if num // 2 == 0:
+            print("Even")
+        else:
+            print("Odd")
+        
+        c) 
+        num = 5
+        if num / 2 == 0:
+            print("Even")
+        else:
+            print("Odd")
+        
+        d) 
+        num = 5
+        if num * 2 == 0:
+            print("Even")
+        else:
+            print("Odd")
+                        </pre>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <div class="form-check mt-3">
+                <input class="form-check-input" type="radio" name="exercise-answer" id="optionA" value="a">
+                <label class="text-white" for="optionA">
+                    a)
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exercise-answer" id="optionB" value="b">
+                <label class="text-white" for="optionB">
+                    b)
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exercise-answer" id="optionC" value="c">
+                <label class="text-white" for="optionC">
+                    c)
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exercise-answer" id="optionD" value="d">
+                <label class="text-white" for="optionD">
+                    d)
+                </label>
+            </div>
+            <button type="button" onclick="checkAnswer()" class="btn btn-primary mt-3">Check Answer</button>
+            <p id="exercise-feedback" class="text-red-600 mt-2"></p>
+        </div>
+
+        <script>
+            function checkAnswer() {
+                var userAnswer = document.querySelector('input[name="exercise-answer"]:checked').value;
+                var correctAnswer = "a";
+
+                if (userAnswer === correctAnswer) {
+                    document.getElementById('exercise-feedback').innerHTML = "Correct!";
+                    document.getElementById('exercise-feedback').classList.remove('text-red-600');
+                    document.getElementById('exercise-feedback').classList.add('text-green-600');
+                } else {
+                    document.getElementById('exercise-feedback').innerHTML = "Incorrect. Try again!";
+                    document.getElementById('exercise-feedback').classList.remove('text-green-600');
+                    document.getElementById('exercise-feedback').classList.add('text-red-600');
+                    sendChat(`The user's answer for the if-else exercise is incorrect. They chose option: ${userAnswer}`);
+                }
+            }
+
+            function sendChat(message) {
+                // Implement the sendChat function to handle the message
+                console.log(message); // For demonstration purposes
+            }
+        </script>
+
+    </div>
+</div>
+<!-- Chat Content -->
+{% endblock %}

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="static/pythonGPT_logo.png">
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo-container">
+                    <a href="home" class="logo-link">
+                        <img src="static/pythonGPT_logo.png" alt="PythonGPT Logo" class="logo">
+                        <span class="logo-text">PythonGPT</span>
+                    </a>
+                    <ul class="nav-links">
+                        <li><a href="#welcome">Welcome</a></li>
+                        <li><a href="#video">Video</a></li>
+                        <li><a href="#start">Get Started</a></li>
+                        <!-- <li><a href="#contact-us">Contact Us</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <section id="welcome" class="welcome">
+            <h2>Welcome to PythonGPT</h2>
+            <p>Welcome to our chatbot website! We are a team of developers passionate about creating innovative
+                solutions using artificial intelligence.</p>
+            <p>Start your journey to becoming a Python programmer today. Explore tutorials, examples, and more to
+                enhance your skills.</p>
+        </section>
+        <section id="video" class="video-example">
+            <h2>Why Python???</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="static/python intro homepage.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+        <section id="start" class="start">
+            <h2>What you should learn about Python</h2>
+            <hr class="my-4">
+            <section id="beginner" class="beginner">
+                <h2 class="marquee1"><span>Beginner</span></h2>
+                <div style="display: flex; justify-content: center;">
+                    <a href="syntax" class="tutorial_button" style="background-color: #4ca2af;">Syntax</a>
+                    <a href="comments" class="tutorial_button" style="background-color: #4ca2af;">Comments</a>
+                </div>
+            </section>
+
+            <hr class="my-4">
+            <section id="pre-intermediate" class="pre-intermediate">
+                <h2 class="marquee2"><span>Pre-intermediate (Variables)</span></h2>
+                <div style="display: flex; justify-content: center;">
+                    <a href="variables" class="tutorial_button" style="background-color: #4caf95;">Python
+                        Variables</a>
+                    <a href="variablesNams" class="tutorial_button" style="background-color: #4caf95;">Variables
+                        Name</a>
+                    <a href="assignMultipleValues" class="tutorial_button" style="background-color: #4caf95;">Assign
+                        Multiple Values</a>
+                    <a href="outputVariables" class="tutorial_button" style="background-color: #4caf95;">Output
+                        Variables</a>
+                </div>
+            </section>
+
+            <hr class="my-4">
+            <section id="intermediate" class="intermediate">
+                <h2 class="marquee3"><span>Intermediate</span></h2>
+                <div style="display: flex; justify-content: center;">
+                    <a href="datatypes" class="tutorial_button" style="background-color: #98af4c;">Data Types</a>
+                    <a href="numbers" class="tutorial_button" style="background-color: #98af4c;">Numbers</a>
+                    <a href="casting" class="tutorial_button" style="background-color: #98af4c;">Casting</a>
+                </div>
+            </section>
+
+            <hr class="my-4">
+            <section id="upper-intermediate" class="upper-intermediate">
+                <h2 class="marquee4"><span>Upper-Intermediate (String)</span></h2>
+                <div style="display: flex; justify-content: center;">
+                    <a href="pythonStrings" class="tutorial_button" style="background-color: #afa74c;">Strings</a>
+                    <a href="slicingStrings" class="tutorial_button" style="background-color: #afa74c;">Slicing
+                        Strings</a>
+                    <a href="modifyStrings" class="tutorial_button" style="background-color: #afa74c;">Modify
+                        Strings</a>
+                    <a href="concatenateStrings" class="tutorial_button" style="background-color: #afa74c;">Concatenate
+                        Strings</a>
+                    <a href="formatStrings" class="tutorial_button" style="background-color: #afa74c;">Format
+                        Strings</a>
+                    <a href="escapeStrings" class="tutorial_button" style="background-color: #afa74c;">Escape
+                        Strings</a>
+                    <a href="stringMethods" class="tutorial_button" style="background-color: #afa74c;">Strings
+                        Method</a>
+                </div>
+            </section>
+
+            <hr class="my-4">
+            <section id="advanced" class="advanced">
+                <h2 class="marquee5"><span>Advanced</span></h2>
+                <div style="display: flex; justify-content: center;">
+                    <a href="booleans" class="tutorial_button" style="background-color: #af844c;">Booleans</a>
+                    <a href="operators" class="tutorial_button" style="background-color: #af844c;">Operators</a>
+                    <a href="ifelse" class="tutorial_button" style="background-color: #af844c;">If...Else</a>
+                    <a href="whileloops" class="tutorial_button" style="background-color: #af844c;">While Loops</a>
+                    <a href="forloops" class="tutorial_button" style="background-color: #af844c;">For Loops</a>
+                </div>
+            </section>
+
+            <hr class="my-4">
+            <section id="mastery" class="mastery">
+                <h2 class="marquee6"><span>Mastery</span></h2>
+                <div style="display: flex; justify-content: center;">
+                    <a href="functions" class="tutorial_button" style="background-color: #af4c4c;">Functions</a>
+                    <a href="lambdas" class="tutorial_button" style="background-color: #af4c4c;">Lambda</a>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PythonGPT. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+        color: #333;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #4b5563;
+        color: white;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+        max-width: 50px;
+        /* Limit the width of the logo */
+        max-height: 50px;
+        /* Limit the height of the logo */
+        margin-right: 10px;
+    }
+
+    .logo-text {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .nav-links a:hover {
+        text-decoration: underline;
+    }
+
+    main {
+        padding: 90px 0;
+    }
+
+    .marquee1,
+    .marquee2,
+    .marquee3,
+    .marquee4,
+    .marquee5,
+    .marquee6 {
+        margin: 0 auto;
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+
+    /**
+    .marquee1 span,
+    .marquee2 span,
+    .marquee3 span,
+    .marquee4 span {
+        display: inline-block;
+        padding-left: 100%;
+        position: absolute;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+*/
+
+    .marquee1 span {
+        display: inline-block;
+        padding-left: 100%;
+        animation: marquee1 15s linear infinite;
+    }
+
+    .marquee2 span {
+        display: inline-block;
+        padding-left: 100%;
+        animation: marquee2 13s linear infinite;
+    }
+
+    .marquee3 span {
+        display: inline-block;
+        padding-left: 100%;
+        animation: marquee3 10s linear infinite;
+    }
+
+    .marquee4 span {
+        display: inline-block;
+        padding-left: 100%;
+        animation: marquee4 15s linear infinite;
+    }
+
+    .marquee5 span {
+        display: inline-block;
+        padding-left: 100%;
+        animation: marquee5 13s linear infinite;
+    }
+
+    .marquee6 span {
+        display: inline-block;
+        padding-left: 100%;
+        animation: marquee6 10s linear infinite;
+    }
+
+    @keyframes marquee1 {
+        0% {
+            transform: translate(-100%, 0);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes marquee2 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        100% {
+            transform: translate(-100%, 0);
+        }
+    }
+
+    @keyframes marquee3 {
+        0% {
+            transform: translate(-100%, 0);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes marquee4 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        100% {
+            transform: translate(-100%, 0);
+        }
+    }
+
+    @keyframes marquee5 {
+        0% {
+            transform: translate(-100%, 0);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes marquee6 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        100% {
+            transform: translate(-100%, 0);
+        }
+    }
+
+    .welcome,
+    .video-example,
+    .start,
+    .contact-us,
+    .contact-info,
+    #start,
+    #contact {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+    }
+
+    .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .tutorial_button {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        width: 100px;
+        height: 45px;
+        background-color: #4CAF50;
+        transition: transform .2s;
+        /* Animation */
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        /* Add shadows for 3D effect */
+    }
+
+    .tutorial_button:hover {
+        color: black;
+        transform: scale(1.1);
+        /* Slightly enlarge the button */
+    }
+
+    .tutorial_button:active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+        /* 'Press' effect */
+    }
+
+    footer {
+        background-color: #4b5563;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+    }
+</style>

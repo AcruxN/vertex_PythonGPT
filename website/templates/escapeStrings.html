@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% block title %}Escape Characters{% endblock %}
+
+{% block content %}
+
+<style>
+    td {
+        padding: 8px;
+    }
+
+    .p-data {
+        background-color: rgba(222, 222, 222, 0.3);
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .border-table-datatype tr:nth-child(even) {
+        background-color: #E7E9EB;
+    }
+
+    .border-table {
+        margin: 20px 0;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        display: table;
+    }
+
+    .border-table-datatype th,
+    .border-table-datatype td {
+        padding: 8px 8px;
+        display: table-cell;
+        text-align: left;
+        vertical-align: top;
+        padding-left: 16px;
+    }
+</style>
+
+<div class="">
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python - Escape Characters</p>
+
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.formatStrings') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.stringMethods') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-4">
+        <div class="content-1 space-y-3">
+            <div class="content title space-y-3">
+                <div class="text-3xl">Escape Character</div><br>
+                <div class="space-y-3">
+                    <p>To insert characters that are illegal in a string, use an escape character.
+
+                    </p>
+                    <p>An escape character is a backslash \ followed by the character you want to insert.
+
+                    </p>
+                    <p>An example of an illegal character is a double quote inside a string that is surrounded by double
+                        quotes:
+
+                    </p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-red-200 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div>You will get an error if you use double quotes inside a string that is surrounded by double quotes:
+
+                </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+
+                    <div>txt = <span class="text-red-600">"We are the so-called "</span>Vikings <span
+                            class="text-red-600">" from the north."</span>
+                    </div>
+                    <div class="absolute top-0 left-0 bg-red-600 p-0.5 h-full"></div>
+
+                </div>
+
+            </div>
+            <div>To fix this problem, use the escape character \":</div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div>The escape character allows you to use double quotes when you normally would not be allowed:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>txt = <span class="text-red-600">"We are the so-called \"</span>Vikings \<span
+                            class="text-red-600">" from the north."</span>
+                    </div>
+
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <hr class="my-4">
+        <div class="content-1 space-y-3">
+            <table class="border-table border-table-datatype">
+                <tr>
+                    <th style="min-width:350px">Code</th>
+                    <th>Result</th>
+                    <!-- <th style="width:90px">Try it</th> -->
+                </tr>
+                <tr>
+                    <td>\'</td>
+                    <td>Single Quote
+                    </td>
+                    <!-- <td><a target="_blank" class="w3-btn btnsmall btnsmall" -->
+                    <!-- href="trypython.asp?filename=demo_type_str">Try it &raquo;</a></td> -->
+                </tr>
+                <tr>
+                    <td>\\</td>
+                    <td>Backslash</td>
+                    <!-- <td><a target="_blank" class="w3-btn btnsmall btnsmall"
+                            href="trypython.asp?filename=demo_type_int">Try it &raquo;</a></td> -->
+                </tr>
+                <tr>
+                    <td>\n </td>
+                    <td>New Line
+                    </td>
+                    <!-- <td><a target="_blank" class="w3-btn btnsmall btnsmall"
+                            href="trypython.asp?filename=demo_type_float">Try it &raquo;</a></td> -->
+                </tr>
+                <tr>
+                    <td>\r </td>
+                    <td>Carriage Return
+                    </td>
+                    <!-- <td><a target="_blank" class="w3-btn btnsmall btnsmall"
+                            href="trypython.asp?filename=demo_type_complex">Try it &raquo;</a></td> -->
+                </tr>
+                <tr>
+                    <td>\t </td>
+                    <td>liTabst</td>
+                    <!-- <td><a target="_blank" class="w3-btn btnsmall btnsmall"
+                            href="trypython.asp?filename=demo_type_list">Try it &raquo;</a></td> -->
+                </tr>
+                <tr>
+                    <td>\b</td>
+                    <td>Backspace</td>
+                    <!-- <td><a target="_blank" class="w3-btn btnsmall btnsmall"
+                            href="trypython.asp?filename=demo_type_tuple">Try it &raquo;</a></td> -->
+                </tr>
+                <tr>
+                    <td>\f</td>
+                    <td>Form Feed </td>
+                    <!-- <td><a target="_blank" class="w3-btn btnsmall btnsmall"
+                            href="trypython.asp?filename=demo_type_range">Try it &raquo;</a></td> -->
+                </tr>
+                <tr>
+                    <td>\ooo </td>
+                    <td>Octal value
+                    </td>
+                    <!-- <td><a target="_blank" class="w3-btn btnsmall btnsmall"
+                            href="trypython.asp?filename=demo_type_dict">Try it &raquo;</a></td> -->
+                </tr>
+                <tr>
+                    <td>\xhh</td>
+                    <td>Hex value</td>
+                    <!-- <td><a target="_blank" class="w3-btn btnsmall btnsmall"
+                            href="trypython.asp?filename=demo_type_set">Try it &raquo;</a></td> -->
+                </tr>
+
+            </table>
+        </div>
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.formatStrings') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.stringMethods') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Chat Content -->
+    <!-- <div class="right-content w-1/2 relative" style="height: calc(100vh - 4rem);">  -->
+    {% endblock %}

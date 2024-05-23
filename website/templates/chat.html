@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Chat{% endblock %}
+
+{% block content %}
+    <h1>Chat with Our Chatbot</h1>
+    <form method="post">
+        <input type="text" name="user_text" placeholder="Type your message...">
+        <button type="submit">Send</button>
+    </form>
+    
+{% endblock %}

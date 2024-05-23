@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Variables{% endblock %}
+
+{% block content %}
+
+<div class="header space-y-3 py-4 px-5">
+    <p class="text-4xl font-bold">Python Variables</p>
+    <div style="margin-bottom: 0%;">
+        <a href="{{ url_for('views.comments') }}" class="button-link ">
+            <button class="btn btn-primary">Previous</button>
+        </a>
+        <a href="{{ url_for('views.variableNames') }}" class="button-link btn-primary float-right">
+            <button class="btn btn-primary">Next</button>
+        </a>
+    </div>
+</div>
+<div class="px-12 pb-4">
+    <hr class="my-4">
+    <div class="content-1 space-y-3">
+        <div class="content title">
+            <div class="text-3xl">Variables</div><br>
+            <p>Variables serve as containers for storing data values. </p>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div class="content title">
+        <div class="text-3xl">Creating Variables
+        </div><br>
+        <div class="space-y-2">
+            <p>Python lacks a specific command for declaring a variable.
+            </p>
+            <p>A variable is instantiated the moment you first assign a value to it.
+
+            </p>
+        </div>
+    </div>
+    <div class="content-1 space-y-3">
+        <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div>x = <span class="text-red-600">5</span></div>
+                <div>y = <span class="text-red-600">"John"</span></div>
+                <div><span class="text-blue-600">print</span>(x)</div>
+                <div><span class="text-blue-600">print</span>(y)</div>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+        <p>Variables don't require declaration with any specific type and can even change type after their
+            initialization.</p>
+        <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+
+                <div>x = <span class="text-red-600">4</span></div>
+                <div>y = <span class="text-red-600">"Sally"</span></div>
+                <div><span class="text-blue-600">print</span>(x)</div>
+                </span><span class="text-green-600"># is now of type str</span>
+            </div>
+            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+        </div>
+    </div>
+
+    <hr class="my-4">
+    <div class="content title">
+        <div class="text-3xl">Casting
+        </div><br>
+        <div class="space-y-2">
+            <p>To specify a variable's data type, casting can be utilized.</p>
+        </div>
+    </div>
+    <div class="content-1 space-y-3">
+        <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div>x = <span class="text-blue-600">str</span>(<span class="text-red-600">3</span>)</div>
+                <div>y = <span class="text-blue-600">int</span>(<span class="text-red-600">3</span>)</div>
+                <div>z = <span class="text-blue-600">float</span>(<span class="text-red-600">3</span>)</div>
+
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <hr class="my-4">
+    <div class="content title">
+        <div class="text-3xl">Get the Type
+        </div><br>
+        <div class="space-y-2">
+            <p>To determine the data type of a variable, you can employ the <code>type()</code> function.</p>
+        </div>
+    </div>
+    <div class="content-1 space-y-3">
+        <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+            <div class="text-xl mb-2">Example</div>
+            <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                <div>x = <span class="text-red-600">5</span></div>
+                <div>y = <span class="text-red-600">"John"</span></div>
+                <div><span class="text-blue-600">print</span>(<span class="text-blue-600">type</span>(x))</div>
+                <div><span class="text-blue-600">print</span>(<span class="text-blue-600">type</span>(y))</div>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+        </div>
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.comments') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.variableNames') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

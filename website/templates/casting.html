@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Casting{% endblock %}
+
+{% block content %}
+<!-- Writee our mian content here -->
+<div>
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python Casting</p>
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.numbers') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.pythonStrings') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-4">
+        <div class="content-1 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Specify a Variable Type</div><br>
+                <div class="space-y-3">
+                    <p>There are occasions when you might need to specify a type for a variable. This can be achieved
+                        through casting. Python, being an object-oriented language, utilizes classes to define data
+                        types, including its primitive types.</p>
+                    <p>Casting in Python involves the use of constructor functions:</p>
+                    <ul class="list-disc ml-4 pl-3">
+                        <li><span class="text-red-600">int()</span> - constructs an integer number from an integer
+                            literal, a float literal (by discarding all decimals), or a string literal (provided the
+                            string represents a whole number)</li>
+                        <li><span class="text-red-600">float()</span> - constructs a floating-point number from an
+                            integer literal, a float literal, or a string literal (if the string represents a float or
+                            an integer)</li>
+                        <li><span class="text-red-600">str()</span> - constructs a string from various data types,
+                            including strings, integer literals, and float literals</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm">Intergers: </div>
+
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>x = int(2) # x will be 2</div>
+                    <div>y = int(3.8) # y will be 3</div>
+                    <div>z = int("4") # z will be 4</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm">Floats: </div>
+
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>x = float(10) # x will be 10.0
+                    </div>
+                    <div>y = float(20.8) # y will be 20.8
+                    </div>
+                    <div>z = float("30") # z will be 30.0
+                    </div>
+                    <div>w = float("40.2") # w will be 40.2
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm">Intergers: </div>
+
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>x = str("L1") # x will be 'L1'
+                    </div>
+                    <div>y = str(20) # y will be '20'
+                    </div>
+                    <div>z = str(31.0) # z will be '31.0'
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <div style="margin-bottom: 0%;">
+                <a href="{{ url_for('views.numbers') }}" class="button-link ">
+                    <button class="btn btn-primary">Previous</button>
+                </a>
+                <a href="{{ url_for('views.pythonStrings') }}" class="button-link btn-primary float-right">
+                    <button class="btn btn-primary">Next</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Chat Content -->
+{% endblock %}

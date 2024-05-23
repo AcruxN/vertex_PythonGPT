@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}String Concatenation{% endblock %}
+
+{% block content %}
+
+<div class="">
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python - String Concatenation</p>
+
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.modifyStrings') }}" class="button-link ">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.formatStrings') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-4">
+        <div class="content-1 space-y-3">
+            <div class="content title space-y-3">
+                <div class="text-3xl">String Concatenation</div><br>
+                <p>To join, or merge, two strings, you can employ the + operator.</p>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div>Merge variable <span class="text-red-600">a</span> with variable <span
+                        class="text-red-600">b</span> into variable c:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>a = <span class="text-red-600"> "Hello"</span>
+                    </div>
+                    <div>b = <span class="text-red-600"> "Hello"</span>
+                    </div>
+                    <div>c = a + b
+                    </div>
+                    <div><span class="text-blue-600"> print</span>(c)
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+
+                </div>
+
+            </div>
+            <br>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div>To include a space between them, append a <span class="text-red-600">" "</span>:</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>a = <span class="text-red-600"> "Hello"</span>
+                    </div>
+                    <div>b = <span class="text-red-600"> "Hello"</span>
+                    </div>
+                    <div>c = a + <span class="text-red-600">" "</span> + b
+                    </div>
+                    <div><span class="text-blue-600"> print</span>(c)
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+
+                </div>
+
+            </div>
+            <div style="margin-bottom: 0%;">
+                <a href="{{ url_for('views.modifyStrings') }}" class="button-link ">
+                    <button class="btn btn-primary">Previous</button>
+                </a>
+                <a href="{{ url_for('views.formatStrings') }}" class="button-link btn-primary float-right">
+                    <button class="btn btn-primary">Next</button>
+                </a>
+            </div>
+
+        </div>
+        <hr class="my-4">
+        <h2 class="text-3xl">Think Yourself</h2>
+        <br>
+        <div class="content-3 space-y-3 rounded-lg bg-black p-4">
+            <h2 class="text-3xl text-white">What do you think is the output?</h2>
+            <div class="bg-white p-2 pl-3 flex flex-col relative">
+                <div>words = [<span class="text-red-600"> "This"</span>, <span class="text-red-600"> "is"</span>, <span
+                        class="text-red-600"> "a"</span>, <span class="text-red-600"> "sentence"</span>]
+                </div>
+                <div>sentence = <span class="text-red-600">" "</span>.<span class="text-blue-600">join</span>(words)
+                </div>
+                <div><span class="text-blue-600"> print</span>(sentence)
+                </div>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+            <button type="button"
+                onclick="sendChat(`explain the output of this python ode in short words = [ 'This', 'is', 'a', 'sentence'] sentence = ' '.join(words) print(sentence) `)"
+                class="btn btn-success mt-3">I Don't Know?</button>
+        </div>
+    </div>
+    {% endblock %}

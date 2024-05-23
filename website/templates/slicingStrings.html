@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block title %}Slicing Strings{% endblock %}
+
+{% block content %}
+<!-- Writee our mian content here -->
+<div>
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python - Slicing Strings</p>
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.pythonStrings') }}" class="button-link btn-primary">
+                <button class="btn btn-primary">Previous</button>
+            </a>
+            <a href="{{ url_for('views.modifyStrings') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+    <div class="px-12 pb-4">
+
+        <hr class="my-4">
+        <div class="content-3 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Slicing</div><br>
+                <div class="space-y-2">
+                    <p>You can retrieve a range of characters using the slice syntax.</p>
+                    <p>To extract a portion of the string, specify the starting index and the ending index separated by
+                        a colon.</p>
+                </div>
+
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div>Retrieve the characters from position 2 up to position 5 (exclusive):</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>b = <span class="text-red-600">"Hello, World!"</span>
+                    </div>
+                    <div><span class="text-blue-600">print</span>(b[<span class="text-red-600">2</span>:<span
+                            class="text-red-600">5</span>])</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <div class="bg-yellow-100 p-4"><span class="font-semibold">Note:</span> Indexing in Python starts from 0.
+            </div>
+
+            <hr class="my-4">
+            <div class="content-3 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Slice From the Start</div><br>
+                    <div class="space-y-2">
+                        <p>If you leave out the start index, the range will start at the first character:</p>
+
+                    </div>
+                </div>
+                <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                    <div class="text-xl mb-2">Example</div>
+                    <div>Retrieve the characters from the beginning to position 5 (not included):</div>
+
+                    <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                        <div>b = <span class="text-red-600">"Hello, World!"</span>
+                        </div>
+                        <div><span class="text-blue-600">print</span>(b[:<span class="text-red-600">4</span>])</div>
+                        <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <hr class="my-4">
+            <div class="content-3 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Slice To the End
+                    </div><br>
+                    <div class="space-y-2">
+                        <p>If you omit the end index, the range will extend to the end:</p>
+
+                    </div>
+                </div>
+                <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                    <div class="text-xl mb-2">Example</div>
+                    <div class="text-sm mb-2">Retrieve the characters starting from position 2 until the end:</div>
+                    <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                        <div>b = <span class="text-red-600">"Hello, World!"</span>
+                        </div>
+                        <div><span class="text-blue-600">print</span>(b[<span class="text-red-600">1</span>:])</div>
+                        <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                    </div>
+                </div>
+
+            </div>
+            <hr class="my-4">
+            <div class="content-3 space-y-3">
+                <div class="content title">
+                    <div class="text-3xl">Negative Indexing
+
+                    </div><br>
+                    <div class="space-y-2">
+                        <p>Use negative indices to initiate the slice from the end of the string:</p>
+
+                    </div>
+                </div>
+                <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                    <div class="text-xl mb-2">Example</div>
+                    <div class="space-y-3">
+                        <div class="text-sm mb-2">Retrieve the characters:</div>
+                        <div class="text-sm mb-2">From: "o" in "World!" (position -5)</div>
+                        <div class="text-sm mb-2">To, excluding: "d" in "World!" (position -2)</div>
+
+
+                    </div>
+                    <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                        <div>b = <span class="text-red-600">"Hello, World!"</span>
+                        </div>
+                        <div><span class="text-blue-600">print</span>(b[<span class="text-red-600">-5</span>:<span
+                                class="text-red-600">-2</span>])</div>
+                        <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 0%;">
+                    <a href="{{ url_for('views.pythonStrings') }}" class="button-link btn-primary">
+                        <button class="btn btn-primary">Previous</button>
+                    </a>
+                    <a href="{{ url_for('views.modifyStrings') }}" class="button-link btn-primary float-right">
+                        <button class="btn btn-primary">Next</button>
+                    </a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <h2 class="text-3xl">Think Yourself</h2>
+            <br>
+            <div class="content-3 space-y-3 rounded-lg bg-black p-4">
+                <h2 class="text-3xl text-white">What is the output?</h2>
+                <div class="bg-white p-2 pl-3 flex flex-col relative">
+                    <div>b = <span class="text-red-600">"Hello, World!"</span>
+                    </div>
+                    <div><span class="text-blue-600">print</span>(b[::<span class="text-red-600">-1</span>])</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+                <button type="button"
+                    onclick="sendChat(`explain the output of this code in short        b = 'Hello, World!'  print(b[::-1])`)"
+                    class="btn btn-success mt-3">I Don't Know?</button>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

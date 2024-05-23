@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block title %}Syntax{% endblock %}
+
+{% block content %}
+<script>
+    // function test(){
+    //     localStorage.clear();
+    // }
+</script>
+<div class="">
+    <div class="header space-y-3 py-4 px-5">
+        <p class="text-4xl font-bold">Python Syntax</p>
+
+        <div style="margin-bottom: 0%;">
+            <a href="{{ url_for('views.comments') }}" class="button-link btn-primary float-right">
+                <button class="btn btn-primary">Next</button>
+            </a>
+        </div>
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-4">
+        <div class="content-1 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Execute Python Syntax</div><br>
+                <p>As we discussed earlier, Python code can be run by typing it directly into the Command Line:</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                        <div class="bg-black w-full p-2 flex flex-col relative">
+                            <div class="text-white">>>> print("Hello, World!")</div>
+                            <div class="text-white">Hello, World!</div>
+                            <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                        </div>
+                    </div>
+                    <p class="pl-3">Alternatively, you can create a Python file on the server with a .py extension and
+                        execute it from the Command Line:</p>
+                </div>
+                <div class="col-lg-4 flex justify-center items-center p-2">
+                    <dotlottie-player class="animate__slideInRight animate__animated"
+                        src="https://lottie.host/a3504789-7a00-4996-8c1c-5c8058ce27c4/e3FOo02NVd.json"
+                        background="transparent" speed="1" style="width: 150px; height: auto" direction="1"
+                        playMode="normal" loop autoplay></dotlottie-player>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="bg-black w-full p-2 flex flex-col relative">
+                    <div class="text-white">C:\Users\Your Name>python myfile.py</div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="content-2 space-y-3">
+            <div class="content title">
+                <div class="text-3xl">Python Indentation</div><br>
+                <div class="space-y-2">
+                    <p>Indentation refers to the spaces at the start of a code line.</p>
+                    <p>In many other programming languages, indentation is used solely for readability. However, in
+                        Python, indentation is crucial.</p>
+                    <p>Python uses indentation to define blocks of code.</p>
+                </div>
+            </div>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div class="text-red-600"><span class="text-blue-600">if</span> 5 <span class="text-black">
+                            >
+                        </span> 2:</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">print</span> ("Five is greater than
+                        two!")
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+
+            </div>
+            <p class="pl-3">Python will give you an error if you skip the indentation:</p>
+            <div class="rounded-lg bg-red-200 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm mb-2">Syntax Error: </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>if 10 > 2:</div>
+                    <div>print("Ten is greater than Two!")</div>
+                    <div class="absolute top-0 left-0 bg-red-600 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <p class="pl-3">The number of spaces you use is up to you as the programmer. While the most common practice
+                is to use four spaces, you must use at least one.</p>
+            <div class="rounded-lg bg-slate-300 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>if 10 > 2:</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;print("Ten is greater than two!")</div>
+                    <div>if 10 > 2:</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Ten is greater than two!")
+                    </div>
+                    <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <p class="pl-3">You must use the same number of spaces within the same block of code; otherwise, Python will
+                produce an error:</p>
+            <div class="rounded-lg bg-red-200 p-3 w-full h-auto mt-2">
+                <div class="text-xl mb-2">Example</div>
+                <div class="text-sm mb-2">Syntax Error: </div>
+                <div class="bg-white w-full p-2 pl-3 flex flex-col relative">
+                    <div>if 10 > 2:</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;print("Ten is greater than two!")</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Ten is greater than two!")</div>
+                    <div class="absolute top-0 left-0 bg-red-600 p-0.5 h-full"></div>
+                </div>
+            </div>
+            <div style="margin-bottom: 0%;">
+                <a href="{{ url_for('views.comments') }}" class="button-link btn-primary float-right">
+                    <button class="btn btn-primary">Next</button>
+                </a>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="px-12 pb-4">
+        <hr class="my-3">
+        <h2 class="text-3xl">Exercise</h2>
+        <br>
+        <div class="content-4 space-y-3 rounded-lg bg-black p-4">
+            <h2 class="text-3xl text-white">True or False</h2>
+            <div class="bg-white p-2 pl-3 flex flex-col relative">
+                <p>Indentation in Python is optional and does not affect the code's functionality.</p>
+                <div class="absolute top-0 left-0 bg-green-300 p-0.5 h-full"></div>
+            </div>
+            <div class="form-check mt-3">
+                <input class="form-check-input" type="radio" name="indentation" id="trueOption" value="true">
+                <label class="text-white" for="trueOption">
+                    True
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="indentation" id="falseOption" value="false">
+                <label class="text-white" for="falseOption">
+                    False
+                </label>
+            </div>
+            <button type="button" onclick="checkAnswer()" class="btn btn-primary mt-3">Check Answer</button>
+            <p id="exercise-feedback" class="text-red-600 mt-2"></p>
+        </div>
+    </div>
+
+    <script>
+
+
+        function checkAnswer() {
+            var userAnswer = document.querySelector('input[name="indentation"]:checked').value;
+            var correctAnswer = "false";
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById('exercise-feedback').innerHTML = "Correct!";
+                document.getElementById('exercise-feedback').classList.remove('text-red-600');
+                document.getElementById('exercise-feedback').classList.add('text-green-600');
+            } else {
+                document.getElementById('exercise-feedback').innerHTML = "Incorrect. Try again!";
+                document.getElementById('exercise-feedback').classList.remove('text-green-600');
+                document.getElementById('exercise-feedback').classList.add('text-red-600');
+                sendChat("Indentation in Python is optional and does not affect the code's functionality. (True/False)。 Give me explaination.");
+            }
+        }
+    </script>
+
+
+</div>
+<!-- Chat Content -->
+<!-- <div class="right-content w-1/2 relative" style="height: calc(100vh - 4rem);">  -->
+{% endblock %}
