@@ -68,6 +68,6 @@ PythonGPT is an interactive web service designed to teach beginners how to code 
 
 ### Usage
 
-- Navigate to "<http://localhost:5000>" or "<http://127.0.0.1:5000>" with web browser to access the service
+- Navigate to "<http://localhost:5000>" or "<http://127.0.0.1:5000>" with web browser to access the service locally / configure public web service
 - Follow interactive lessons to learn Python programming
 - Use the AI chatbot for assistance whenever needed
