@@ -58,7 +58,7 @@ PythonGPT is an interactive web service designed to teach beginners how to code 
 
 5. **Modify Project Details in vertexFunction.py**
 
-    Rename *google_cloud_platform_project_name* from *line 19* to your google cloud project's name
+    Rename ***google_cloud_platform_project_name*** from *line 19* to your google cloud project's project name
 
 6. **Run The Program**
 
